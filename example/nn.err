@@ -5,3 +5,15 @@ Epoch=      1,  lr= 1.000000e-03  train: 2.258618e+00 2.073431e+01  validation: 
 Epoch=      2,  lr= 1.000000e-03  train: 2.267259e+00 3.548523e+01  validation: 2.144879e+00 4.438794e+01  
 Epoch=      3,  lr= 1.000000e-03  train: 2.246815e+00 4.602770e+01  validation: 2.210661e+00 6.096214e+01  
 Epoch=      4,  lr= 1.000000e-03  train: 2.183232e+00 1.023859e+02  validation: 2.040129e+00 1.640471e+02  
+Epoch=      5,  lr= 1.000000e-03  train: 1.610118e+00 2.733949e+02  validation: 1.121272e+00 1.596679e+02  
+Epoch=      6,  lr= 1.000000e-03  train: 9.034790e-01 2.433201e+02  validation: 7.514408e-01 3.086763e+02  
+Epoch=      7,  lr= 1.000000e-03  train: 6.760340e-01 3.291870e+02  validation: 6.146189e-01 3.400592e+02  
+Epoch=      8,  lr= 1.000000e-03  train: 5.862052e-01 3.337296e+02  validation: 5.576667e-01 3.357257e+02  
+Epoch=      9,  lr= 1.000000e-03  train: 5.387589e-01 3.110037e+02  validation: 5.192978e-01 2.969330e+02  
+Epoch=     10,  lr= 1.000000e-03  train: 5.067042e-01 2.869746e+02  validation: 4.929814e-01 2.754371e+02  
+Epoch=     11,  lr= 1.000000e-03  train: 4.821130e-01 2.666901e+02  validation: 4.706232e-01 2.509139e+02  
+Epoch=     12,  lr= 1.000000e-03  train: 4.610834e-01 2.513012e+02  validation: 4.509838e-01 2.529279e+02  
+Epoch=     13,  lr= 1.000000e-03  train: 4.435923e-01 2.382284e+02  validation: 4.300744e-01 2.264691e+02  
+Epoch=     14,  lr= 1.000000e-03  train: 4.294557e-01 2.198897e+02  validation: 4.016992e-01 2.046449e+02  
+Epoch=     15,  lr= 1.000000e-03  train: 4.123244e-01 2.013106e+02  validation: 4.108820e-01 1.851122e+02  
+Epoch=     16,  lr= 1.000000e-03  train: 4.018861e-01 1.804348e+02  validation: 4.104336e-01 1.657873e+02  
