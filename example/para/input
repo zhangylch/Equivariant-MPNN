@@ -10,8 +10,8 @@ Epoch=10000                    # total numbers of epochs for fitting
 dtype='float32'   #float32/float64
 # batchsize: the most import setup for efficiency
 batchsize=64  # batchsize for each process
-init_weight=[0.5, 0.0]
-final_weight=[0.1, 0.0]
+init_weight=[5.0, 0.5]
+final_weight=[0.2, 0.1]
 
 #========================parameters for optim=======================
 start_lr=0.001                  # initial learning rate
