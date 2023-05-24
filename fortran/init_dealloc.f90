@@ -28,7 +28,7 @@ subroutine init_neigh(in_rc,in_dier,cell)
        tmp(1)=matrix(1,1)
        tmp(2)=matrix(2,2)
        tmp(3)=matrix(3,3)
-       dier=min(in_dier,minval(tmp))
+       dier=min(in_dier,minval(tmp))+0.0001
        interaction=ceiling(rc/dier)
        nimage=ceiling(rc/abs(tmp))
        length=(2*nimage(1)+1)*(2*nimage(2)+1)*(2*nimage(3)+1)

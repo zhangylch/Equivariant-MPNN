@@ -23,5 +23,5 @@ module load intel/mkl/2019
 cd $PWD
 
 path="/data/home/scv2201/run/zyl/program/Equi-MPNN/"
-#python3 $path >out
-sleep 10000
+python3 $path >out
+#sleep 10000

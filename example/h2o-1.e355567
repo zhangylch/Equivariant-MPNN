@@ -1,0 +1,1 @@
+/var/spool/slurmd/job355567/slurm_script: line 26: 65883 Segmentation fault      python3 $path > out

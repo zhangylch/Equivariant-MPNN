@@ -41,11 +41,12 @@ if table_init==1:
    
 scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,model,ema_model)
 
+#transform the nn module to a function
 fmodel,params=make_functional(model,disable_autograd_tracking=True)
-#build and initialize the optim
-optim=torchopt.adam(start_lr)
-opt_state=optim.init(params)
 
+#build and initialize the optim
+optim=torchopt.adamw(start_lr)
+opt_state=optim.init(params)
 
 if force_table:
     Vmap_model=vmap(grad_and_value(fmodel,argnums=1),in_dims=(None,0,0,0,0,0,0),out_dims=(0,0))
@@ -64,19 +65,18 @@ loss_grad_model=grad_and_value(loss_func,has_aux=True)
 print_err=print_info.Print_Info(end_lr)
 
 lr=start_lr
-iepoch=0
 for iepoch in range(Epoch):
     weight=(init_weight-final_weight)*(lr-end_lr)/(start_lr-end_lr)+final_weight
-    loss_prop_train=torch.zeros(nprop,device=device)        
     if torch.cuda.is_available():
         ntrain=dataloader.loader.ntrain
         nval=dataloader.loader.nval
     else:
         ntrain=dataloader.ntrain
         nval=dataloader.nval
+    loss_prop_train=torch.zeros(nprop,device=device)        
     for data in dataloader:
         grads,(loss,loss_prop)=loss_grad_model(params,*data,weight)
-        updates,opt_state=optim.update(grads,opt_state)
+        updates,opt_state=optim.update(grads, opt_state, params=params)
         params = torchopt.apply_updates(params, updates)
         loss_prop_train+=loss_prop.detach()
     # update the EMA parameters
@@ -96,7 +96,7 @@ for iepoch in range(Epoch):
     if np.mod(iepoch,check_epoch)==0: scheduler(loss_val)
 
     print_err(iepoch,lr,loss_prop_train,loss_prop_val)
-    if lr<=end_lr:
+    if lr<end_lr:
         break
 print("Normal termination")
 

@@ -45,7 +45,6 @@ class NNMod(torch.nn.Module):
               if abs(nl[1]-nl[-1])>0.5: nl.append(nl[1])   
           nhid=len(nl)-1
           modules=[]
-          #if layernorm: modules.append(LayerNorm(nl[0]))
           linear=Linear(nl[0],nl[1])
           xavier_normal_(linear.weight)
           modules.append(linear)
@@ -63,7 +62,7 @@ class NNMod(torch.nn.Module):
           modules.append(actfun(nl[nhid-1],nl[nhid]))
           if layernorm: modules.append(LayerNorm(nl[nhid]))
           linear=Linear(nl[nhid],self.outputneuron)
-          #zeros_(linear.weight)
+          zeros_(linear.weight)
           linear.bias[:]=initbias[:]
           modules.append(linear)
       self.nets = Sequential(*modules)

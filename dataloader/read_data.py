@@ -14,11 +14,11 @@ def Read_data(datafloder="train/",force_table=None,Dtype=np.float32):
        force=[]
     numpoint=0
     fname2=datafloder+'configuration'
-    icell=np.zeros((3,3),dtype=Dtype,order="F")
     with open(fname2,'r') as f1:
         while True:
             string=f1.readline()
             if not string: break
+            icell=np.zeros((3,3),dtype=Dtype,order="F")
             numatom=int(string)
             numatoms.append(numatom)
             string=f1.readline()
