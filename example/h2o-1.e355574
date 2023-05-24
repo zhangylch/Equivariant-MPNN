@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/data/home/scv2201/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/data/home/scv2201/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/data/home/scv2201/run/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/data/home/scv2201/run/zyl/program/Equi-MPNN/run/train.py", line 6, in <module>
+    from src.params import *
+  File "/data/home/scv2201/run/zyl/program/Equi-MPNN/src/params.py", line 66, in <module>
+    exec(m[0])
+  File "<string>", line 1
+    <<<<<<< HEAD
+    ^^
+SyntaxError: invalid syntax
+/var/spool/slurmd/job355574/slurm_script: line 27: syntax error near unexpected token `<<<'
+/var/spool/slurmd/job355574/slurm_script: line 27: `<<<<<<< HEAD'

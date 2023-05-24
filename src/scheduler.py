@@ -3,11 +3,12 @@ import numpy as np
 
 # define the strategy of weight decay
 class Scheduler():
-    def __init__(self,end_lr,decay_factor,state_loader,model,ema_model):
+    def __init__(self,end_lr,decay_factor,state_loader,optim,model,ema_model):
         self.best_loss = 1e50
         self.end_lr=end_lr
         self.decay_factor=decay_factor
         self.state_loader=state_loader
+        self.optim=optim
         self.ema_model=ema_model
         self.model=model
     
@@ -16,8 +17,10 @@ class Scheduler():
  
     def forward(self,loss):
         if loss>10.0*self.best_loss or loss.isnan():
+            lr=self.optim.param_groups[0]["lr"]
             self.state_loader(self.model,"Equi-MPNN.pt")
             self.state_loader(self.ema_model,"ema.pt")
+            self.optim.param_groups[0]["lr"]=lr*self.decay_factor
         else:
             # store the best loss for preventing a boomm of error
             if loss[0]<self.best_loss:
@@ -28,3 +31,4 @@ class Scheduler():
                 # store the checkpoint at each epoch
                 torch.save(self.ema_model.state_dict(),"ema.pt")
                 torch.save(self.model.state_dict(),"Equi-MPNN.pt")
+                torch.save(self.optim.state_dict(),"optim.pt")

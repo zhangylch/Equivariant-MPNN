@@ -67,6 +67,7 @@ class NNMod(torch.nn.Module):
           modules.append(linear)
       self.nets = Sequential(*modules)
 
+#   @pysnooper.snoop('out',depth=2)   for debug
    def forward(self,density):    
       # elements: dtype: LongTensor store the index of elements of each center atom
        return self.nets(density)
