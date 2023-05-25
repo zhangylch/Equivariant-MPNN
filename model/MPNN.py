@@ -27,7 +27,7 @@ class MPNN(torch.nn.Module):
         rs=(torch.rand(nwave)*cutoff).to(device)
         initbias=torch.hstack((initbias,rs,alpha))
         # embedded nn
-        self.embnn=MLP.NNMod(self.nwave*3,emb_nblock,emb_nl,np.array([0]),actfun,initbias=initbias,layernorm=layernorm)
+        self.embnn=MLP.NNMod(self.nwave*3,emb_nblock,emb_nl,np.array([0]),actfun,initbias=initbias,layernorm=emb_layernorm)
 
         # instantiate the nn radial function and disable the dropout 
         self.sph_cal=sph_cal.SPH_CAL(max_l,device=device,Dtype=Dtype)

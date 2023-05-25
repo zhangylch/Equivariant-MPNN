@@ -3,8 +3,8 @@ import numpy as np
 
 # define the strategy of weight decay
 class Scheduler():
-    def __init__(self,end_lr,decay_factor,state_loader,model,ema_model):
-        self.best_loss = 1e50
+    def __init__(self,end_lr,decay_factor,state_loader,model,ema_model,device):
+        self.best_loss = torch.tensor([1e30],device=device)
         self.end_lr=end_lr
         self.decay_factor=decay_factor
         self.state_loader=state_loader
@@ -20,8 +20,8 @@ class Scheduler():
             self.state_loader(self.ema_model,"ema.pt")
         else:
             # store the best loss for preventing a boomm of error
-            if loss[0]<self.best_loss:
-                self.best_loss=loss.item()
+            if loss[0]<self.best_loss[0]:
+                self.best_loss=loss
                 # save the jit model for inference
                 jit_pes=torch.jit.script(self.ema_model.module)
                 jit_pes.save("inference.pt")

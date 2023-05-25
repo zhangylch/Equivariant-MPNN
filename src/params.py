@@ -27,19 +27,21 @@ end_lr=1e-5                    # final learning rate
 re_ceff=0.0                    # L2 normalization cofficient
 decay_factor=0.5               # Factor by which the learning rate will be reduced. new_lr = lr * factor.      
 patience_epoch=100             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
+datafloder="./"
+
 #=======================parameters for local environment========================
 maxneigh=100000
 cutoff = 4.0
 max_l=2
 nwave=8
 norbital=None
-#==================================data floder=============================
-datafloder="./"
 
 #===============================embedded NN structure==========
 emb_nblock=1
 emb_nl=[8,8]
 emb_layernorm=True
+
+
 iter_loop = 2
 iter_nblock = 1             # neural network architecture   
 iter_nl = [64,64]

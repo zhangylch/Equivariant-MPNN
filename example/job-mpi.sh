@@ -1,27 +1,16 @@
 #!/bin/sh
-#SBATCH -J h2o-1
-#SBATCH --gpus=1
-#SBATCH -N 1
-##SBATCH --ntasks-per-node=1 --cpus-per-task=8
-#SBATCH -o %x.o%j
-#SBATCH -e %x.e%j
-echo Running on hosts
-echo Time is `date`
-echo Directory is $PWD
-echo This job runs on the following nodes:
-echo $SLURM_JOB_NODELIST
-# Your conda environment
+#PBS -V
+#PBS -q a100
+#PBS -N fireann-1
+#PBS -l nodes=1:ppn=8
+#export CUDA_VISIBLE_DEVICES="4,5"
+source /public/home/group_zyl/.bashrc
+# conda environment
+conda_env=pt200
 export OMP_NUM_THREADS=8
+#path to save the code
+path="/public/home/group_zyl/zyl/program/Equi-MPNN"
 
-module add cuda/11.7
-
-#ATTENTION! HERE MUSTT BE ONE LINE,OR ERROR!
-source ~/.bashrc
-source activate pt200
-module load gcc/9.3
-module load intel/mkl/2019
-cd $PWD
-
-path="/data/home/scv2201/run/zyl/program/Equi-MPNN/"
-#python3 $path >out
-sleep 10000
+conda activate $conda_env 
+cd $PBS_O_WORKDIR 
+python3 $path >out
