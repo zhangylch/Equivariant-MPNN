@@ -61,6 +61,8 @@ for iepoch in range(Epoch):
     else:
         ntrain=dataloader.ntrain
         nval=dataloader.nval
+
+    loss_prop_train=torch.zeros(nprop,device=device)
     for data in dataloader:
         #optim.zero_grad()
         coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop=data
@@ -74,8 +76,6 @@ for iepoch in range(Epoch):
         #for name, params in model.named_parameters():
         #    print(name,params,params.grad)
         optim.step()   
-        prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
-        print("hello1",prediction)
     # update the EMA parameters
     ema_model.update_parameters(model)
 
