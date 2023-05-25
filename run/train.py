@@ -64,17 +64,12 @@ for iepoch in range(Epoch):
 
     loss_prop_train=torch.zeros(nprop,device=device)
     for data in dataloader:
-        #optim.zero_grad()
         coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop=data
         prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
         loss,loss_prop=loss_func.loss_func(prediction,abprop,weight)
         loss_prop_train+=loss_prop.detach()
-        # print(torch.cuda.memory_allocated)
-        # obtain the gradients
         optim.zero_grad(set_to_none=True)
         loss.backward()
-        #for name, params in model.named_parameters():
-        #    print(name,params,params.grad)
         optim.step()   
     # update the EMA parameters
     ema_model.update_parameters(model)
@@ -85,9 +80,6 @@ for iepoch in range(Epoch):
     for data in dataloader:
         coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop=data
         prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
-        #print(prediction)
-        #for ipred, ilabel in zip(prediction,abprop):
-        #    print(ipred,ilabel)
         loss,loss_prop=loss_func.loss_func(prediction,abprop,weight)
         loss_val+=loss.detach()
         loss_prop_val+=loss_prop.detach()
