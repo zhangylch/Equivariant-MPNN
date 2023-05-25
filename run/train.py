@@ -39,7 +39,7 @@ if table_init==1:
     state_loader(model,"Equi-MPNN.pt")
     state_loader(ema_model,"ema.pt")
    
-scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,model,ema_model)
+scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,model,ema_model,device)
 
 fmodel,params=make_functional(model,disable_autograd_tracking=True)
 #build and initialize the optim
