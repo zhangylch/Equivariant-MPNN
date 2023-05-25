@@ -96,3 +96,8 @@ Epoch=     92,  lr= 1.000000e-03  train: 5.465677e-01 7.144531e+00  validation: 
 Epoch=     93,  lr= 1.000000e-03  train: 5.596384e-01 7.576803e+00  validation: 6.265042e-01 6.649056e+00  
 Epoch=     94,  lr= 1.000000e-03  train: 5.513498e-01 7.891581e+00  validation: 5.405660e-01 6.563464e+00  
 Epoch=     95,  lr= 1.000000e-03  train: 5.449656e-01 6.883727e+00  validation: 5.382822e-01 6.853620e+00  
+Epoch=     96,  lr= 1.000000e-03  train: 5.437667e-01 6.966069e+00  validation: 5.511299e-01 7.654570e+00  
+Epoch=     97,  lr= 1.000000e-03  train: 5.552130e-01 7.507999e+00  validation: 5.010468e-01 6.543831e+00  
+Epoch=     98,  lr= 1.000000e-03  train: 5.549795e-01 7.960965e+00  validation: 5.706720e-01 8.169624e+00  
+Epoch=     99,  lr= 1.000000e-03  train: 5.441655e-01 8.556776e+00  validation: 5.454008e-01 7.242107e+00  
+Epoch=    100,  lr= 1.000000e-03  train: 5.271633e-01 7.407763e+00  validation: 5.130166e-01 6.414752e+00  
