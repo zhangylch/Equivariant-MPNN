@@ -1,0 +1,730 @@
+*** Error in `python3': free(): invalid next size (normal): 0x00002ac760be6440 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x81489)[0x2ac624c30489]
+/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so(+0x70a43)[0x2ac6c095ba43]
+/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so(+0x744c0)[0x2ac6c095f4c0]
+python3(_PyEval_EvalFrameDefault+0x5b7e)[0x56445c41f57e]
+python3(+0x1871eb)[0x56445c3c81eb]
+python3(+0xbcaa2)[0x56445c2fdaa2]
+python3(+0x1945bc)[0x56445c3d55bc]
+python3(_PyEval_EvalFrameDefault+0xc87)[0x56445c41a687]
+python3(+0x1871eb)[0x56445c3c81eb]
+python3(+0x1b7636)[0x56445c3f8636]
+python3(_PyObject_Call+0x1f6)[0x56445c3813f6]
+python3(_PyEval_EvalFrameDefault+0x2216)[0x56445c41bc16]
+python3(+0x1871eb)[0x56445c3c81eb]
+python3(+0x106c30)[0x56445c347c30]
+python3(+0x1871eb)[0x56445c3c81eb]
+python3(+0x106c30)[0x56445c347c30]
+python3(+0x1871eb)[0x56445c3c81eb]
+python3(+0x1b7636)[0x56445c3f8636]
+python3(_PyObject_Call+0x1f6)[0x56445c3813f6]
+python3(+0x25cdd6)[0x56445c49ddd6]
+python3(+0x20b0f7)[0x56445c44c0f7]
+/lib64/libpthread.so.0(+0x7dd5)[0x2ac62499add5]
+/lib64/libc.so.6(clone+0x6d)[0x2ac624cacead]
+======= Memory map: ========
+200000000-200400000 ---p 00000000 00:00 0 
+200400000-200600000 rw-s 00000000 00:05 156077                           /dev/nvidiactl
+200600000-200800000 rw-s 00000000 00:05 156097                           /dev/nvidia1
+200800000-204000000 rw-s 00000000 00:05 156077                           /dev/nvidiactl
+204000000-205c00000 ---p 00000000 00:00 0 
+205c00000-205e00000 rw-s 00000000 00:05 156077                           /dev/nvidiactl
+205e00000-206000000 rw-s 00000000 00:05 156077                           /dev/nvidiactl
+206000000-206200000 rw-s 206000000 00:05 301854                          /dev/nvidia-uvm
+206200000-206400000 rw-s 00000000 00:05 156077                           /dev/nvidiactl
+206400000-206600000 ---p 00000000 00:00 0 
+206600000-206800000 rw-s 00000000 00:05 156077                           /dev/nvidiactl
+206800000-a00200000 ---p 00000000 00:00 0 
+10000000000-10004000000 ---p 00000000 00:00 0 
+2ac624066000-2ac624088000 r-xp 00000000 103:03 6300765                   /usr/lib64/ld-2.17.so
+2ac624088000-2ac624089000 rw-p 00000000 00:00 0 
+2ac624089000-2ac624090000 r--s 00000000 103:03 6301074                   /usr/lib64/gconv/gconv-modules.cache
+2ac624090000-2ac624094000 r--p 00000000 00:28 242677161254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/math.cpython-310-x86_64-linux-gnu.so
+2ac624094000-2ac62409c000 r-xp 00004000 00:28 242677161254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/math.cpython-310-x86_64-linux-gnu.so
+2ac62409c000-2ac6240a0000 r--p 0000c000 00:28 242677161254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/math.cpython-310-x86_64-linux-gnu.so
+2ac6240a0000-2ac6240a1000 ---p 00010000 00:28 242677161254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/math.cpython-310-x86_64-linux-gnu.so
+2ac6240a1000-2ac6240a2000 r--p 00010000 00:28 242677161254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/math.cpython-310-x86_64-linux-gnu.so
+2ac6240a2000-2ac6240a3000 rw-p 00011000 00:28 242677161254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/math.cpython-310-x86_64-linux-gnu.so
+2ac6240a3000-2ac6240a5000 r--p 00000000 00:28 242675645500               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/fcntl.cpython-310-x86_64-linux-gnu.so
+2ac6240a5000-2ac6240a7000 r-xp 00002000 00:28 242675645500               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/fcntl.cpython-310-x86_64-linux-gnu.so
+2ac6240a7000-2ac6240a9000 r--p 00004000 00:28 242675645500               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/fcntl.cpython-310-x86_64-linux-gnu.so
+2ac6240a9000-2ac6240aa000 r--p 00005000 00:28 242675645500               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/fcntl.cpython-310-x86_64-linux-gnu.so
+2ac6240aa000-2ac6240ab000 rw-p 00006000 00:28 242675645500               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/fcntl.cpython-310-x86_64-linux-gnu.so
+2ac6240ab000-2ac6240ad000 r--p 00000000 00:28 242675645508               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_posixsubprocess.cpython-310-x86_64-linux-gnu.so
+2ac6240ad000-2ac6240af000 r-xp 00002000 00:28 242675645508               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_posixsubprocess.cpython-310-x86_64-linux-gnu.so
+2ac6240af000-2ac6240b0000 r--p 00004000 00:28 242675645508               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_posixsubprocess.cpython-310-x86_64-linux-gnu.so
+2ac6240b0000-2ac6240b1000 r--p 00004000 00:28 242675645508               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_posixsubprocess.cpython-310-x86_64-linux-gnu.so
+2ac6240b1000-2ac6240b2000 rw-p 00005000 00:28 242675645508               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_posixsubprocess.cpython-310-x86_64-linux-gnu.so
+2ac6240b2000-2ac6240b3000 r--p 00000000 00:28 242675645490               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+2ac6240b3000-2ac6240b4000 r-xp 00001000 00:28 242675645490               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+2ac6240b4000-2ac6240b5000 r--p 00002000 00:28 242675645490               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+2ac6240b5000-2ac6240b6000 r--p 00002000 00:28 242675645490               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+2ac6240b6000-2ac6240b7000 rw-p 00003000 00:28 242675645490               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_opcode.cpython-310-x86_64-linux-gnu.so
+2ac6240b7000-2ac6241bc000 rw-p 00000000 00:00 0 
+2ac6241bc000-2ac6241bf000 r--p 00000000 00:28 242675645522               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/select.cpython-310-x86_64-linux-gnu.so
+2ac6241bf000-2ac6241c2000 r-xp 00003000 00:28 242675645522               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/select.cpython-310-x86_64-linux-gnu.so
+2ac6241c2000-2ac6241c4000 r--p 00006000 00:28 242675645522               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/select.cpython-310-x86_64-linux-gnu.so
+2ac6241c4000-2ac6241c5000 ---p 00008000 00:28 242675645522               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/select.cpython-310-x86_64-linux-gnu.so
+2ac6241c5000-2ac6241c6000 r--p 00008000 00:28 242675645522               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/select.cpython-310-x86_64-linux-gnu.so
+2ac6241c6000-2ac6241c7000 rw-p 00009000 00:28 242675645522               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/select.cpython-310-x86_64-linux-gnu.so
+2ac6241c7000-2ac6241ce000 r--p 00000000 00:28 242677161265               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ctypes.cpython-310-x86_64-linux-gnu.so
+2ac6241ce000-2ac6241dd000 r-xp 00007000 00:28 242677161265               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ctypes.cpython-310-x86_64-linux-gnu.so
+2ac6241dd000-2ac6241e3000 r--p 00016000 00:28 242677161265               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ctypes.cpython-310-x86_64-linux-gnu.so
+2ac6241e3000-2ac6241e4000 r--p 0001b000 00:28 242677161265               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ctypes.cpython-310-x86_64-linux-gnu.so
+2ac6241e4000-2ac6241e8000 rw-p 0001c000 00:28 242677161265               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ctypes.cpython-310-x86_64-linux-gnu.so
+2ac6241e8000-2ac6241ea000 r--p 00000000 00:28 350089283156               /public/home/group_zyl/.conda/envs/pt200/lib/libffi.so.7.1.0
+2ac6241ea000-2ac6241f0000 r-xp 00002000 00:28 350089283156               /public/home/group_zyl/.conda/envs/pt200/lib/libffi.so.7.1.0
+2ac6241f0000-2ac6241f1000 r--p 00008000 00:28 350089283156               /public/home/group_zyl/.conda/envs/pt200/lib/libffi.so.7.1.0
+2ac6241f1000-2ac6241f2000 ---p 00009000 00:28 350089283156               /public/home/group_zyl/.conda/envs/pt200/lib/libffi.so.7.1.0
+2ac6241f2000-2ac6241f3000 r--p 00009000 00:28 350089283156               /public/home/group_zyl/.conda/envs/pt200/lib/libffi.so.7.1.0
+2ac6241f3000-2ac6241f4000 rw-p 0000a000 00:28 350089283156               /public/home/group_zyl/.conda/envs/pt200/lib/libffi.so.7.1.0
+2ac6241f4000-2ac6241f8000 r--p 00000000 00:28 242677161250               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_struct.cpython-310-x86_64-linux-gnu.so
+2ac6241f8000-2ac6241fe000 r-xp 00004000 00:28 242677161250               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_struct.cpython-310-x86_64-linux-gnu.so
+2ac6241fe000-2ac624202000 r--p 0000a000 00:28 242677161250               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_struct.cpython-310-x86_64-linux-gnu.so
+2ac624202000-2ac624203000 r--p 0000d000 00:28 242677161250               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_struct.cpython-310-x86_64-linux-gnu.so
+2ac624203000-2ac624204000 rw-p 0000e000 00:28 242677161250               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_struct.cpython-310-x86_64-linux-gnu.so
+2ac624204000-2ac624207000 r--p 00000000 00:28 242675645524               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/zlib.cpython-310-x86_64-linux-gnu.so
+2ac624207000-2ac62420b000 r-xp 00003000 00:28 242675645524               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/zlib.cpython-310-x86_64-linux-gnu.so
+2ac62420b000-2ac62420e000 r--p 00007000 00:28 242675645524               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/zlib.cpython-310-x86_64-linux-gnu.so
+2ac62420e000-2ac62420f000 r--p 00009000 00:28 242675645524               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/zlib.cpython-310-x86_64-linux-gnu.so
+2ac62420f000-2ac624210000 rw-p 0000a000 00:28 242675645524               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/zlib.cpython-310-x86_64-linux-gnu.so
+2ac624210000-2ac624213000 r--p 00000000 00:28 92343752490                /public/home/group_zyl/.conda/envs/pt200/lib/libz.so.1.2.12
+2ac624213000-2ac624228000 r-xp 00003000 00:28 92343752490                /public/home/group_zyl/.conda/envs/pt200/lib/libz.so.1.2.12
+2ac624228000-2ac62422f000 r--p 00018000 00:28 92343752490                /public/home/group_zyl/.conda/envs/pt200/lib/libz.so.1.2.12
+2ac62422f000-2ac624230000 r--p 0001e000 00:28 92343752490                /public/home/group_zyl/.conda/envs/pt200/lib/libz.so.1.2.12
+2ac624230000-2ac624231000 rw-p 0001f000 00:28 92343752490                /public/home/group_zyl/.conda/envs/pt200/lib/libz.so.1.2.12
+2ac624231000-2ac624233000 r--p 00000000 00:28 242675645518               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+2ac624233000-2ac624236000 r-xp 00002000 00:28 242675645518               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+2ac624236000-2ac624238000 r--p 00005000 00:28 242675645518               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+2ac624238000-2ac624239000 r--p 00006000 00:28 242675645518               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+2ac624239000-2ac62423a000 rw-p 00007000 00:28 242675645518               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bz2.cpython-310-x86_64-linux-gnu.so
+2ac62423a000-2ac62423c000 r--p 00000000 00:28 266292073433               /public/home/group_zyl/.conda/envs/pt200/lib/libbz2.so.1.0.8
+2ac62423c000-2ac62424a000 r-xp 00002000 00:28 266292073433               /public/home/group_zyl/.conda/envs/pt200/lib/libbz2.so.1.0.8
+2ac62424a000-2ac62424c000 r--p 00010000 00:28 266292073433               /public/home/group_zyl/.conda/envs/pt200/lib/libbz2.so.1.0.8
+2ac62424c000-2ac62424d000 r--p 00011000 00:28 266292073433               /public/home/group_zyl/.conda/envs/pt200/lib/libbz2.so.1.0.8
+2ac62424d000-2ac62424e000 rw-p 00012000 00:28 266292073433               /public/home/group_zyl/.conda/envs/pt200/lib/libbz2.so.1.0.8
+2ac62424e000-2ac624251000 r--p 00000000 00:28 242675645528               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+2ac624251000-2ac624256000 r-xp 00003000 00:28 242675645528               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+2ac624256000-2ac624259000 r--p 00008000 00:28 242675645528               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+2ac624259000-2ac62425a000 r--p 0000a000 00:28 242675645528               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+2ac62425a000-2ac62425b000 rw-p 0000b000 00:28 242675645528               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_lzma.cpython-310-x86_64-linux-gnu.so
+2ac62425b000-2ac62425f000 r--p 00000000 00:28 517545106238               /public/home/group_zyl/.conda/envs/pt200/lib/liblzma.so.5.2.5
+2ac62425f000-2ac624276000 r-xp 00004000 00:28 517545106238               /public/home/group_zyl/.conda/envs/pt200/lib/liblzma.so.5.2.5
+2ac624276000-2ac624281000 r--p 0001b000 00:28 517545106238               /public/home/group_zyl/.conda/envs/pt200/lib/liblzma.so.5.2.5
+2ac624281000-2ac624282000 ---p 00026000 00:28 517545106238               /public/home/group_zyl/.conda/envs/pt200/lib/liblzma.so.5.2.5
+2ac624282000-2ac624283000 r--p 00026000 00:28 517545106238               /public/home/group_zyl/.conda/envs/pt200/lib/liblzma.so.5.2.5
+2ac624283000-2ac624284000 rw-p 00027000 00:28 517545106238               /public/home/group_zyl/.conda/envs/pt200/lib/liblzma.so.5.2.5
+2ac624284000-2ac624285000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac624285000-2ac624286000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac624286000-2ac624287000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac624287000-2ac624288000 r--p 00021000 103:03 6300765                   /usr/lib64/ld-2.17.so
+2ac624288000-2ac624289000 rw-p 00022000 103:03 6300765                   /usr/lib64/ld-2.17.so
+2ac624289000-2ac62428a000 rw-p 00000000 00:00 0 
+2ac62428a000-2ac62428c000 r-xp 00000000 103:03 6300778                   /usr/lib64/libdl-2.17.so
+2ac62428c000-2ac62448c000 ---p 00002000 103:03 6300778                   /usr/lib64/libdl-2.17.so
+2ac62448c000-2ac62448d000 r--p 00002000 103:03 6300778                   /usr/lib64/libdl-2.17.so
+2ac62448d000-2ac62448e000 rw-p 00003000 103:03 6300778                   /usr/lib64/libdl-2.17.so
+2ac62448e000-2ac624490000 r-xp 00000000 103:03 6300806                   /usr/lib64/libutil-2.17.so
+2ac624490000-2ac62468f000 ---p 00002000 103:03 6300806                   /usr/lib64/libutil-2.17.so
+2ac62468f000-2ac624690000 r--p 00001000 103:03 6300806                   /usr/lib64/libutil-2.17.so
+2ac624690000-2ac624691000 rw-p 00002000 103:03 6300806                   /usr/lib64/libutil-2.17.so
+2ac624691000-2ac624792000 r-xp 00000000 103:03 6300780                   /usr/lib64/libm-2.17.so
+2ac624792000-2ac624991000 ---p 00101000 103:03 6300780                   /usr/lib64/libm-2.17.so
+2ac624991000-2ac624992000 r--p 00100000 103:03 6300780                   /usr/lib64/libm-2.17.so
+2ac624992000-2ac624993000 rw-p 00101000 103:03 6300780                   /usr/lib64/libm-2.17.so
+2ac624993000-2ac6249aa000 r-xp 00000000 103:03 6300798                   /usr/lib64/libpthread-2.17.so
+2ac6249aa000-2ac624ba9000 ---p 00017000 103:03 6300798                   /usr/lib64/libpthread-2.17.so
+2ac624ba9000-2ac624baa000 r--p 00016000 103:03 6300798                   /usr/lib64/libpthread-2.17.so
+2ac624baa000-2ac624bab000 rw-p 00017000 103:03 6300798                   /usr/lib64/libpthread-2.17.so
+2ac624bab000-2ac624baf000 rw-p 00000000 00:00 0 
+2ac624baf000-2ac624d71000 r-xp 00000000 103:03 6300772                   /usr/lib64/libc-2.17.so
+2ac624d71000-2ac624f71000 ---p 001c2000 103:03 6300772                   /usr/lib64/libc-2.17.so
+2ac624f71000-2ac624f75000 r--p 001c2000 103:03 6300772                   /usr/lib64/libc-2.17.so
+2ac624f75000-2ac624f77000 rw-p 001c6000 103:03 6300772                   /usr/lib64/libc-2.17.so
+2ac624f77000-2ac624f7c000 rw-p 00000000 00:00 0 
+2ac624f7c000-2ac62b4a6000 r--p 00000000 103:03 6440877                   /usr/lib/locale/locale-archive
+2ac62b4a6000-2ac62b8a6000 rw-p 00000000 00:00 0 
+2ac62b8a6000-2ac62b8a8000 r--p 00000000 00:28 242675645513               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bisect.cpython-310-x86_64-linux-gnu.so
+2ac62b8a8000-2ac62b8aa000 r-xp 00002000 00:28 242675645513               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bisect.cpython-310-x86_64-linux-gnu.so
+2ac62b8aa000-2ac62b8ab000 r--p 00004000 00:28 242675645513               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bisect.cpython-310-x86_64-linux-gnu.so
+2ac62b8ab000-2ac62b8ac000 r--p 00004000 00:28 242675645513               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bisect.cpython-310-x86_64-linux-gnu.so
+2ac62b8ac000-2ac62b8ad000 rw-p 00005000 00:28 242675645513               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_bisect.cpython-310-x86_64-linux-gnu.so
+2ac62b8ad000-2ac62b8af000 r--p 00000000 00:28 242675645506               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_random.cpython-310-x86_64-linux-gnu.so
+2ac62b8af000-2ac62b8b1000 r-xp 00002000 00:28 242675645506               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_random.cpython-310-x86_64-linux-gnu.so
+2ac62b8b1000-2ac62b8b2000 r--p 00004000 00:28 242675645506               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_random.cpython-310-x86_64-linux-gnu.so
+2ac62b8b2000-2ac62b8b3000 r--p 00004000 00:28 242675645506               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_random.cpython-310-x86_64-linux-gnu.so
+2ac62b8b3000-2ac62b8b4000 rw-p 00005000 00:28 242675645506               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_random.cpython-310-x86_64-linux-gnu.so
+2ac62b8b4000-2ac62b8b6000 r--p 00000000 00:28 242675645519               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_sha512.cpython-310-x86_64-linux-gnu.so
+2ac62b8b6000-2ac62b8bd000 r-xp 00002000 00:28 242675645519               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_sha512.cpython-310-x86_64-linux-gnu.so
+2ac62b8bd000-2ac62b8be000 r--p 00009000 00:28 242675645519               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_sha512.cpython-310-x86_64-linux-gnu.so
+2ac62b8be000-2ac62b8bf000 r--p 00009000 00:28 242675645519               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_sha512.cpython-310-x86_64-linux-gnu.so
+2ac62b8bf000-2ac62b8c0000 rw-p 0000a000 00:28 242675645519               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_sha512.cpython-310-x86_64-linux-gnu.so
+2ac62b8c0000-2ac62b8c1000 r--p 00000000 00:28 547662617249               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_global_deps.so
+2ac62b8c1000-2ac62b8c2000 r-xp 00001000 00:28 547662617249               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_global_deps.so
+2ac62b8c2000-2ac62b8c3000 r--p 00002000 00:28 547662617249               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_global_deps.so
+2ac62b8c3000-2ac62b8c4000 r--p 00002000 00:28 547662617249               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_global_deps.so
+2ac62b8c4000-2ac62b8c5000 rw-p 00003000 00:28 547662617249               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_global_deps.so
+2ac62b8c5000-2ac62ba28000 r--p 00000000 00:28 64427744269                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_intel_lp64.so.1
+2ac62ba28000-2ac62c129000 r-xp 00163000 00:28 64427744269                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_intel_lp64.so.1
+2ac62c129000-2ac62c448000 r--p 00864000 00:28 64427744269                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_intel_lp64.so.1
+2ac62c448000-2ac62c44a000 r--p 00b82000 00:28 64427744269                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_intel_lp64.so.1
+2ac62c44a000-2ac62c45d000 rw-p 00b84000 00:28 64427744269                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_intel_lp64.so.1
+2ac62c45d000-2ac62c464000 rw-p 00000000 00:00 0 
+2ac62c464000-2ac62c634000 r--p 00000000 00:28 64427744278                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_gnu_thread.so.1
+2ac62c634000-2ac62ddfe000 r-xp 001d0000 00:28 64427744278                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_gnu_thread.so.1
+2ac62ddfe000-2ac62df9e000 r--p 0199a000 00:28 64427744278                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_gnu_thread.so.1
+2ac62df9e000-2ac62dfa2000 r--p 01b39000 00:28 64427744278                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_gnu_thread.so.1
+2ac62dfa2000-2ac62dfef000 rw-p 01b3d000 00:28 64427744278                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_gnu_thread.so.1
+2ac62dfef000-2ac62e1da000 r--p 00000000 00:28 64427744289                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_core.so.1
+2ac62e1da000-2ac631946000 r-xp 001eb000 00:28 64427744289                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_core.so.1
+2ac631946000-2ac6323fc000 r--p 03957000 00:28 64427744289                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_core.so.1
+2ac6323fc000-2ac6323fd000 ---p 0440d000 00:28 64427744289                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_core.so.1
+2ac6323fd000-2ac632404000 r--p 0440d000 00:28 64427744289                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_core.so.1
+2ac632404000-2ac632434000 rw-p 04414000 00:28 64427744289                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_core.so.1
+2ac632434000-2ac63245d000 rw-p 00000000 00:00 0 
+2ac63245d000-2ac636c5f000 r-xp 00000000 00:28 249123425122               /public/home/group_zyl/.conda/envs/pt200/lib/libcurand.so.10.3.2.106
+2ac636c5f000-2ac636e5f000 ---p 04802000 00:28 249123425122               /public/home/group_zyl/.conda/envs/pt200/lib/libcurand.so.10.3.2.106
+2ac636e5f000-2ac636e65000 r--p 04802000 00:28 249123425122               /public/home/group_zyl/.conda/envs/pt200/lib/libcurand.so.10.3.2.106
+2ac636e65000-2ac638291000 rw-p 04808000 00:28 249123425122               /public/home/group_zyl/.conda/envs/pt200/lib/libcurand.so.10.3.2.106
+2ac638291000-2ac6388c9000 rw-p 00000000 00:00 0 
+2ac6388c9000-2ac6388ca000 rw-p 05c34000 00:28 249123425122               /public/home/group_zyl/.conda/envs/pt200/lib/libcurand.so.10.3.2.106
+2ac6388ca000-2ac63ad53000 r-xp 00000000 00:28 201904762254               /public/home/group_zyl/.conda/envs/pt200/lib/libcufft.so.10.7.2.124
+2ac63ad53000-2ac63af53000 ---p 02489000 00:28 201904762254               /public/home/group_zyl/.conda/envs/pt200/lib/libcufft.so.10.7.2.124
+2ac63af53000-2ac63af64000 r--p 02489000 00:28 201904762254               /public/home/group_zyl/.conda/envs/pt200/lib/libcufft.so.10.7.2.124
+2ac63af64000-2ac640d4b000 rw-p 0249a000 00:28 201904762254               /public/home/group_zyl/.conda/envs/pt200/lib/libcufft.so.10.7.2.124
+2ac640d4b000-2ac641357000 rw-p 00000000 00:00 0 
+2ac641357000-2ac641359000 rw-p 08282000 00:28 201904762254               /public/home/group_zyl/.conda/envs/pt200/lib/libcufft.so.10.7.2.124
+2ac641359000-2ac64a367000 r-xp 00000000 00:28 193321420896               /public/home/group_zyl/.conda/envs/pt200/lib/libcublas.so.11.10.3.66
+2ac64a367000-2ac64a567000 ---p 0900e000 00:28 193321420896               /public/home/group_zyl/.conda/envs/pt200/lib/libcublas.so.11.10.3.66
+2ac64a567000-2ac64a575000 r--p 0900e000 00:28 193321420896               /public/home/group_zyl/.conda/envs/pt200/lib/libcublas.so.11.10.3.66
+2ac64a575000-2ac64a5af000 rw-p 0901c000 00:28 193321420896               /public/home/group_zyl/.conda/envs/pt200/lib/libcublas.so.11.10.3.66
+2ac64a5af000-2ac64a5b7000 rw-p 00000000 00:00 0 
+2ac64a5b7000-2ac64a5bb000 rw-p 09056000 00:28 193321420896               /public/home/group_zyl/.conda/envs/pt200/lib/libcublas.so.11.10.3.66
+2ac64a5bb000-2ac65ba06000 r-xp 00000000 00:28 193321420897               /public/home/group_zyl/.conda/envs/pt200/lib/libcublasLt.so.11.10.3.66
+2ac65ba06000-2ac65bc06000 ---p 1144b000 00:28 193321420897               /public/home/group_zyl/.conda/envs/pt200/lib/libcublasLt.so.11.10.3.66
+2ac65bc06000-2ac65bd93000 r--p 1144b000 00:28 193321420897               /public/home/group_zyl/.conda/envs/pt200/lib/libcublasLt.so.11.10.3.66
+2ac65bd93000-2ac65e514000 rw-p 115d8000 00:28 193321420897               /public/home/group_zyl/.conda/envs/pt200/lib/libcublasLt.so.11.10.3.66
+2ac65e514000-2ac65e55c000 rw-p 00000000 00:00 0 
+2ac65e55c000-2ac65e55f000 rw-p 13d59000 00:28 193321420897               /public/home/group_zyl/.conda/envs/pt200/lib/libcublasLt.so.11.10.3.66
+2ac65e55f000-2ac65e5fd000 r-xp 00000000 00:28 483224155124               /public/home/group_zyl/.conda/envs/pt200/lib/libcudart.so.11.7.99
+2ac65e5fd000-2ac65e7fd000 ---p 0009e000 00:28 483224155124               /public/home/group_zyl/.conda/envs/pt200/lib/libcudart.so.11.7.99
+2ac65e7fd000-2ac65e802000 r--p 0009e000 00:28 483224155124               /public/home/group_zyl/.conda/envs/pt200/lib/libcudart.so.11.7.99
+2ac65e802000-2ac65e803000 rw-p 000a3000 00:28 483224155124               /public/home/group_zyl/.conda/envs/pt200/lib/libcudart.so.11.7.99
+2ac65e803000-2ac65e804000 rw-p 00000000 00:00 0 
+2ac65e804000-2ac65e808000 rw-p 000a4000 00:28 483224155124               /public/home/group_zyl/.conda/envs/pt200/lib/libcudart.so.11.7.99
+2ac65e808000-2ac65e810000 r-xp 00000000 00:28 365098241612               /public/home/group_zyl/.conda/envs/pt200/lib/libnvToolsExt.so.1.0.0
+2ac65e810000-2ac65ea10000 ---p 00008000 00:28 365098241612               /public/home/group_zyl/.conda/envs/pt200/lib/libnvToolsExt.so.1.0.0
+2ac65ea10000-2ac65ea11000 r--p 00008000 00:28 365098241612               /public/home/group_zyl/.conda/envs/pt200/lib/libnvToolsExt.so.1.0.0
+2ac65ea11000-2ac65ea13000 rw-p 00009000 00:28 365098241612               /public/home/group_zyl/.conda/envs/pt200/lib/libnvToolsExt.so.1.0.0
+2ac65ea13000-2ac65ea1d000 r--p 00000000 00:28 266292073441               /public/home/group_zyl/.conda/envs/pt200/lib/libgomp.so.1.0.0
+2ac65ea1d000-2ac65ea34000 r-xp 0000a000 00:28 266292073441               /public/home/group_zyl/.conda/envs/pt200/lib/libgomp.so.1.0.0
+2ac65ea34000-2ac65ea3d000 r--p 00021000 00:28 266292073441               /public/home/group_zyl/.conda/envs/pt200/lib/libgomp.so.1.0.0
+2ac65ea3d000-2ac65ea3e000 ---p 0002a000 00:28 266292073441               /public/home/group_zyl/.conda/envs/pt200/lib/libgomp.so.1.0.0
+2ac65ea3e000-2ac65ea3f000 r--p 0002a000 00:28 266292073441               /public/home/group_zyl/.conda/envs/pt200/lib/libgomp.so.1.0.0
+2ac65ea3f000-2ac65ea40000 rw-p 0002b000 00:28 266292073441               /public/home/group_zyl/.conda/envs/pt200/lib/libgomp.so.1.0.0
+2ac65ea40000-2ac65ea41000 r--p 00000000 00:28 536873791091               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_C.cpython-310-x86_64-linux-gnu.so
+2ac65ea41000-2ac65ea42000 r-xp 00001000 00:28 536873791091               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_C.cpython-310-x86_64-linux-gnu.so
+2ac65ea42000-2ac65ea43000 r--p 00002000 00:28 536873791091               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_C.cpython-310-x86_64-linux-gnu.so
+2ac65ea43000-2ac65ea44000 r--p 00002000 00:28 536873791091               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_C.cpython-310-x86_64-linux-gnu.so
+2ac65ea44000-2ac65ea45000 rw-p 00003000 00:28 536873791091               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_C.cpython-310-x86_64-linux-gnu.so
+2ac65ea45000-2ac65ea48000 r--p 00000000 00:28 547662617251               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libshm.so
+2ac65ea48000-2ac65ea4b000 r-xp 00003000 00:28 547662617251               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libshm.so
+2ac65ea4b000-2ac65ea4c000 r--p 00006000 00:28 547662617251               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libshm.so
+2ac65ea4c000-2ac65ea4d000 ---p 00007000 00:28 547662617251               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libshm.so
+2ac65ea4d000-2ac65ea4e000 r--p 00007000 00:28 547662617251               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libshm.so
+2ac65ea4e000-2ac65ea4f000 rw-p 00008000 00:28 547662617251               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libshm.so
+2ac65ea4f000-2ac65ea5b000 r--p 00000000 00:28 547662617252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch.so
+2ac65ea5b000-2ac65ea66000 r-xp 0000c000 00:28 547662617252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch.so
+2ac65ea66000-2ac65ea6b000 r--p 00017000 00:28 547662617252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch.so
+2ac65ea6b000-2ac65ea6c000 ---p 0001c000 00:28 547662617252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch.so
+2ac65ea6c000-2ac65ea6d000 r--p 0001c000 00:28 547662617252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch.so
+2ac65ea6d000-2ac65ea6e000 rw-p 0001d000 00:28 547662617252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch.so
+2ac65ea6e000-2ac65ea75000 r-xp 00000000 103:03 6300802                   /usr/lib64/librt-2.17.so
+2ac65ea75000-2ac65ec74000 ---p 00007000 103:03 6300802                   /usr/lib64/librt-2.17.so
+2ac65ec74000-2ac65ec75000 r--p 00006000 103:03 6300802                   /usr/lib64/librt-2.17.so
+2ac65ec75000-2ac65ec76000 rw-p 00007000 103:03 6300802                   /usr/lib64/librt-2.17.so
+2ac65ec76000-2ac65ec79000 r--p 00000000 00:28 266292073436               /public/home/group_zyl/.conda/envs/pt200/lib/libgcc_s.so.1
+2ac65ec79000-2ac65ec85000 r-xp 00003000 00:28 266292073436               /public/home/group_zyl/.conda/envs/pt200/lib/libgcc_s.so.1
+2ac65ec85000-2ac65ec88000 r--p 0000f000 00:28 266292073436               /public/home/group_zyl/.conda/envs/pt200/lib/libgcc_s.so.1
+2ac65ec88000-2ac65ec89000 r--p 00011000 00:28 266292073436               /public/home/group_zyl/.conda/envs/pt200/lib/libgcc_s.so.1
+2ac65ec89000-2ac65ec8a000 rw-p 00012000 00:28 266292073436               /public/home/group_zyl/.conda/envs/pt200/lib/libgcc_s.so.1
+2ac65ec8a000-2ac65ed2c000 r--p 00000000 00:28 266295755014               /public/home/group_zyl/.conda/envs/pt200/lib/libstdc++.so.6.0.26
+2ac65ed2c000-2ac65edab000 r-xp 000a2000 00:28 266295755014               /public/home/group_zyl/.conda/envs/pt200/lib/libstdc++.so.6.0.26
+2ac65edab000-2ac65edec000 r--p 00121000 00:28 266295755014               /public/home/group_zyl/.conda/envs/pt200/lib/libstdc++.so.6.0.26
+2ac65edec000-2ac65edf7000 r--p 00161000 00:28 266295755014               /public/home/group_zyl/.conda/envs/pt200/lib/libstdc++.so.6.0.26
+2ac65edf7000-2ac65edfb000 rw-p 0016c000 00:28 266295755014               /public/home/group_zyl/.conda/envs/pt200/lib/libstdc++.so.6.0.26
+2ac65edfb000-2ac65edfe000 rw-p 00000000 00:00 0 
+2ac65edfe000-2ac660111000 r-xp 00000000 103:03 6323633                   /usr/lib64/libcuda.so.465.19.01
+2ac660111000-2ac660310000 ---p 01313000 103:03 6323633                   /usr/lib64/libcuda.so.465.19.01
+2ac660310000-2ac6603f6000 r--p 01312000 103:03 6323633                   /usr/lib64/libcuda.so.465.19.01
+2ac6603f6000-2ac660501000 rw-p 013f8000 103:03 6323633                   /usr/lib64/libcuda.so.465.19.01
+2ac660501000-2ac660520000 rw-p 00000000 00:00 0 
+2ac660520000-2ac660704000 r--p 00000000 00:28 547662617256               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_python.so
+2ac660704000-2ac661107000 r-xp 001e4000 00:28 547662617256               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_python.so
+2ac661107000-2ac66141a000 r--p 00be7000 00:28 547662617256               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_python.so
+2ac66141a000-2ac661435000 r--p 00ef9000 00:28 547662617256               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_python.so
+2ac661435000-2ac661486000 rw-p 00f14000 00:28 547662617256               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_python.so
+2ac661486000-2ac6614e5000 rw-p 00000000 00:00 0 
+2ac6614e5000-2ac6621e9000 r--p 00000000 00:28 547662617258               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so
+2ac6621e9000-2ac66bc8d000 r-xp 00d04000 00:28 547662617258               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so
+2ac66bc8d000-2ac66ebd6000 r--p 0a7a8000 00:28 547662617258               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so
+2ac66ebd6000-2ac66ebd7000 ---p 0d6f1000 00:28 547662617258               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so
+2ac66ebd7000-2ac66ef39000 r--p 0d6f1000 00:28 547662617258               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so
+2ac66ef39000-2ac66ef7d000 rw-p 0da53000 00:28 547662617258               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so
+2ac66ef7d000-2ac66f032000 rw-p 00000000 00:00 0 
+2ac66f032000-2ac66f4ee000 rw-p 12f0e000 00:28 547662617258               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cpu.so
+2ac66f4ee000-2ac67014f000 r--p 00000000 00:28 547662617259               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so
+2ac67014f000-2ac67255d000 r-xp 00c61000 00:28 547662617259               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so
+2ac67255d000-2ac6ad864000 r--p 0306f000 00:28 547662617259               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so
+2ac6ad864000-2ac6ad8d8000 r--p 3e375000 00:28 547662617259               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so
+2ac6ad8d8000-2ac6ad8fe000 rw-p 3e3e9000 00:28 547662617259               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libtorch_cuda.so
+2ac6ad8fe000-2ac6adbef000 rw-p 00000000 00:00 0 
+2ac6adbef000-2ac6adbff000 r--p 00000000 00:28 547662617253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10_cuda.so
+2ac6adbff000-2ac6adc41000 r-xp 00010000 00:28 547662617253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10_cuda.so
+2ac6adc41000-2ac6adc51000 r--p 00052000 00:28 547662617253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10_cuda.so
+2ac6adc51000-2ac6adc52000 ---p 00062000 00:28 547662617253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10_cuda.so
+2ac6adc52000-2ac6adc53000 r--p 00062000 00:28 547662617253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10_cuda.so
+2ac6adc53000-2ac6adc54000 rw-p 00063000 00:28 547662617253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10_cuda.so
+2ac6adc54000-2ac6adc57000 rw-p 00000000 00:00 0 
+2ac6adc57000-2ac6adc76000 r--p 00000000 00:28 547662617254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10.so
+2ac6adc76000-2ac6adcd7000 r-xp 0001f000 00:28 547662617254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10.so
+2ac6adcd7000-2ac6adcf7000 r--p 00080000 00:28 547662617254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10.so
+2ac6adcf7000-2ac6adcf9000 r--p 0009f000 00:28 547662617254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10.so
+2ac6adcf9000-2ac6adcff000 rw-p 000a1000 00:28 547662617254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10.so
+2ac6adcff000-2ac6add01000 rw-p 00000000 00:00 0 
+2ac6add01000-2ac6add12000 rw-p 000d1000 00:28 547662617254               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libc10.so
+2ac6add12000-2ac6add35000 r-xp 00000000 00:28 547662610801               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcudnn.so.8
+2ac6add35000-2ac6adf35000 ---p 00023000 00:28 547662610801               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcudnn.so.8
+2ac6adf35000-2ac6adf36000 r--p 00023000 00:28 547662610801               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcudnn.so.8
+2ac6adf36000-2ac6adf37000 rw-p 00024000 00:28 547662610801               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcudnn.so.8
+2ac6adf37000-2ac6adf38000 rw-p 00000000 00:00 0 
+2ac6adf38000-2ac6adf3b000 rw-p 00025000 00:28 547662610801               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcudnn.so.8
+2ac6adf3b000-2ac6ae521000 r-xp 00000000 00:28 547662617260               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcupti-6ac96871.so.11.7
+2ac6ae521000-2ac6ae720000 ---p 005e6000 00:28 547662617260               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcupti-6ac96871.so.11.7
+2ac6ae720000-2ac6ae76a000 r--p 005e5000 00:28 547662617260               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcupti-6ac96871.so.11.7
+2ac6ae76a000-2ac6ae7fe000 rw-p 0062f000 00:28 547662617260               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcupti-6ac96871.so.11.7
+2ac6ae7fe000-2ac6ae835000 rw-p 00000000 00:00 0 
+2ac6ae835000-2ac6ae838000 rw-p 006c4000 00:28 547662617260               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libcupti-6ac96871.so.11.7
+2ac6ae838000-2ac6bcc9e000 r-xp 00000000 00:28 397287709014               /public/home/group_zyl/.conda/envs/pt200/lib/libcusparse.so.11.7.4.91
+2ac6bcc9e000-2ac6bce9e000 ---p 0e466000 00:28 397287709014               /public/home/group_zyl/.conda/envs/pt200/lib/libcusparse.so.11.7.4.91
+2ac6bce9e000-2ac6bcead000 r--p 0e466000 00:28 397287709014               /public/home/group_zyl/.conda/envs/pt200/lib/libcusparse.so.11.7.4.91
+2ac6bcead000-2ac6bcecd000 rw-p 0e475000 00:28 397287709014               /public/home/group_zyl/.conda/envs/pt200/lib/libcusparse.so.11.7.4.91
+2ac6bcecd000-2ac6bced6000 rw-p 00000000 00:00 0 
+2ac6bced6000-2ac6bcedb000 rw-p 0e495000 00:28 397287709014               /public/home/group_zyl/.conda/envs/pt200/lib/libcusparse.so.11.7.4.91
+2ac6bcedb000-2ac6bcfd4000 r--p 00000000 00:28 547662617255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libnvfuser_codegen.so
+2ac6bcfd4000-2ac6bd34d000 r-xp 000f9000 00:28 547662617255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libnvfuser_codegen.so
+2ac6bd34d000-2ac6bd496000 r--p 00472000 00:28 547662617255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libnvfuser_codegen.so
+2ac6bd496000-2ac6bd4ae000 r--p 005ba000 00:28 547662617255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libnvfuser_codegen.so
+2ac6bd4ae000-2ac6bd4b4000 rw-p 005d2000 00:28 547662617255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/lib/libnvfuser_codegen.so
+2ac6bd4b4000-2ac6bd4b5000 rw-p 00000000 00:00 0 
+2ac6bd4b5000-2ac6bfa48000 r-xp 00000000 00:28 410177950134               /public/home/group_zyl/.conda/envs/pt200/lib/libnvrtc.so.11.7.99
+2ac6bfa48000-2ac6bfc48000 ---p 02593000 00:28 410177950134               /public/home/group_zyl/.conda/envs/pt200/lib/libnvrtc.so.11.7.99
+2ac6bfc48000-2ac6c0198000 r--p 02593000 00:28 410177950134               /public/home/group_zyl/.conda/envs/pt200/lib/libnvrtc.so.11.7.99
+2ac6c0198000-2ac6c025e000 rw-p 02ae3000 00:28 410177950134               /public/home/group_zyl/.conda/envs/pt200/lib/libnvrtc.so.11.7.99
+2ac6c025e000-2ac6c0344000 rw-p 00000000 00:00 0 
+2ac6c0344000-2ac6c0346000 rw-p 02baa000 00:28 410177950134               /public/home/group_zyl/.conda/envs/pt200/lib/libnvrtc.so.11.7.99
+2ac6c0346000-2ac6c0347000 r--p 00000000 00:28 36517055018                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_mklinit.cpython-310-x86_64-linux-gnu.so
+2ac6c0347000-2ac6c0348000 r-xp 00001000 00:28 36517055018                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_mklinit.cpython-310-x86_64-linux-gnu.so
+2ac6c0348000-2ac6c0349000 r--p 00002000 00:28 36517055018                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_mklinit.cpython-310-x86_64-linux-gnu.so
+2ac6c0349000-2ac6c034a000 r--p 00002000 00:28 36517055018                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_mklinit.cpython-310-x86_64-linux-gnu.so
+2ac6c034a000-2ac6c034b000 rw-p 00003000 00:28 36517055018                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_mklinit.cpython-310-x86_64-linux-gnu.so
+2ac6c034b000-2ac6c04d0000 r--p 00000000 00:28 64427744261                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_rt.so.1
+2ac6c04d0000-2ac6c0743000 r-xp 00185000 00:28 64427744261                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_rt.so.1
+2ac6c0743000-2ac6c0899000 r--p 003f8000 00:28 64427744261                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_rt.so.1
+2ac6c0899000-2ac6c089a000 ---p 0054e000 00:28 64427744261                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_rt.so.1
+2ac6c089a000-2ac6c08a0000 r--p 0054e000 00:28 64427744261                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_rt.so.1
+2ac6c08a0000-2ac6c08a2000 rw-p 00554000 00:28 64427744261                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_rt.so.1
+2ac6c08a2000-2ac6c08b6000 rw-p 00000000 00:00 0 
+2ac6c08b6000-2ac6c08bc000 r--p 00000000 00:28 36517055019                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_py_mkl_service.cpython-310-x86_64-linux-gnu.so
+2ac6c08bc000-2ac6c08cd000 r-xp 00006000 00:28 36517055019                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_py_mkl_service.cpython-310-x86_64-linux-gnu.so
+2ac6c08cd000-2ac6c08d0000 r--p 00017000 00:28 36517055019                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_py_mkl_service.cpython-310-x86_64-linux-gnu.so
+2ac6c08d0000-2ac6c08d1000 ---p 0001a000 00:28 36517055019                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_py_mkl_service.cpython-310-x86_64-linux-gnu.so
+2ac6c08d1000-2ac6c08d2000 r--p 0001a000 00:28 36517055019                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_py_mkl_service.cpython-310-x86_64-linux-gnu.so
+2ac6c08d2000-2ac6c08d6000 rw-p 0001b000 00:28 36517055019                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/mkl/_py_mkl_service.cpython-310-x86_64-linux-gnu.so
+2ac6c08d6000-2ac6c08d9000 r--p 00000000 00:28 242677161257               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+2ac6c08d9000-2ac6c08e7000 r-xp 00003000 00:28 242677161257               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+2ac6c08e7000-2ac6c08e9000 r--p 00011000 00:28 242677161257               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+2ac6c08e9000-2ac6c08ea000 r--p 00012000 00:28 242677161257               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+2ac6c08ea000-2ac6c08eb000 rw-p 00013000 00:28 242677161257               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_json.cpython-310-x86_64-linux-gnu.so
+2ac6c08eb000-2ac6c0915000 r--p 00000000 00:28 51541612607                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so
+2ac6c0915000-2ac6c0be2000 r-xp 0002a000 00:28 51541612607                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so
+2ac6c0be2000-2ac6c0cd7000 r--p 002f7000 00:28 51541612607                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so
+2ac6c0cd7000-2ac6c0cd8000 ---p 003ec000 00:28 51541612607                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so
+2ac6c0cd8000-2ac6c0cdb000 r--p 003ec000 00:28 51541612607                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so
+2ac6c0cdb000-2ac6c0cfc000 rw-p 003ef000 00:28 51541612607                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_umath.cpython-310-x86_64-linux-gnu.so
+2ac6c0cfc000-2ac6c0e1c000 rw-p 00000000 00:00 0 
+2ac6c0e1c000-2ac6c0e21000 r--p 00000000 00:28 242677161267               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so
+2ac6c0e21000-2ac6c0e32000 r-xp 00005000 00:28 242677161267               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so
+2ac6c0e32000-2ac6c0e38000 r--p 00016000 00:28 242677161267               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so
+2ac6c0e38000-2ac6c0e39000 r--p 0001b000 00:28 242677161267               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so
+2ac6c0e39000-2ac6c0e3b000 rw-p 0001c000 00:28 242677161267               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so
+2ac6c0e3b000-2ac6c0e40000 r--p 00000000 00:28 242677161266               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_pickle.cpython-310-x86_64-linux-gnu.so
+2ac6c0e40000-2ac6c0e55000 r-xp 00005000 00:28 242677161266               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_pickle.cpython-310-x86_64-linux-gnu.so
+2ac6c0e55000-2ac6c0e5b000 r--p 0001a000 00:28 242677161266               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_pickle.cpython-310-x86_64-linux-gnu.so
+2ac6c0e5b000-2ac6c0e5c000 ---p 00020000 00:28 242677161266               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_pickle.cpython-310-x86_64-linux-gnu.so
+2ac6c0e5c000-2ac6c0e5d000 r--p 00020000 00:28 242677161266               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_pickle.cpython-310-x86_64-linux-gnu.so
+2ac6c0e5d000-2ac6c0e5f000 rw-p 00021000 00:28 242677161266               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_pickle.cpython-310-x86_64-linux-gnu.so
+2ac6c0e5f000-2ac6c0f5f000 rw-p 00000000 00:00 0 
+2ac6c0f5f000-2ac6c0f69000 r--p 00000000 00:28 51541612605                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+2ac6c0f69000-2ac6c0f7e000 r-xp 0000a000 00:28 51541612605                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+2ac6c0f7e000-2ac6c0f84000 r--p 0001f000 00:28 51541612605                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+2ac6c0f84000-2ac6c0f85000 ---p 00025000 00:28 51541612605                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+2ac6c0f85000-2ac6c0f86000 r--p 00025000 00:28 51541612605                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+2ac6c0f86000-2ac6c0f87000 rw-p 00026000 00:28 51541612605                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/core/_multiarray_tests.cpython-310-x86_64-linux-gnu.so
+2ac6c0f87000-2ac6c1087000 rw-p 00000000 00:00 0 
+2ac6c1087000-2ac6c1090000 r--p 00000000 00:28 66574415310                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/linalg/_umath_linalg.cpython-310-x86_64-linux-gnu.so
+2ac6c1090000-2ac6c10ac000 r-xp 00009000 00:28 66574415310                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/linalg/_umath_linalg.cpython-310-x86_64-linux-gnu.so
+2ac6c10ac000-2ac6c10b2000 r--p 00025000 00:28 66574415310                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/linalg/_umath_linalg.cpython-310-x86_64-linux-gnu.so
+2ac6c10b2000-2ac6c10b3000 r--p 0002a000 00:28 66574415310                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/linalg/_umath_linalg.cpython-310-x86_64-linux-gnu.so
+2ac6c10b3000-2ac6c10b4000 rw-p 0002b000 00:28 66574415310                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/linalg/_umath_linalg.cpython-310-x86_64-linux-gnu.so
+2ac6c10b4000-2ac6c10b5000 r--p 00000000 00:28 45100465408                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/fft/_pocketfft_internal.cpython-310-x86_64-linux-gnu.so
+2ac6c10b5000-2ac6c10c7000 r-xp 00001000 00:28 45100465408                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/fft/_pocketfft_internal.cpython-310-x86_64-linux-gnu.so
+2ac6c10c7000-2ac6c10c9000 r--p 00013000 00:28 45100465408                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/fft/_pocketfft_internal.cpython-310-x86_64-linux-gnu.so
+2ac6c10c9000-2ac6c10ca000 r--p 00014000 00:28 45100465408                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/fft/_pocketfft_internal.cpython-310-x86_64-linux-gnu.so
+2ac6c10ca000-2ac6c10cb000 rw-p 00015000 00:28 45100465408                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/fft/_pocketfft_internal.cpython-310-x86_64-linux-gnu.so
+2ac6c10cb000-2ac6c11cb000 rw-p 00000000 00:00 0 
+2ac6c11cb000-2ac6c11db000 r--p 00000000 00:28 73016766345                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/mtrand.cpython-310-x86_64-linux-gnu.so
+2ac6c11db000-2ac6c121f000 r-xp 00010000 00:28 73016766345                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/mtrand.cpython-310-x86_64-linux-gnu.so
+2ac6c121f000-2ac6c124d000 r--p 00054000 00:28 73016766345                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/mtrand.cpython-310-x86_64-linux-gnu.so
+2ac6c124d000-2ac6c124e000 r--p 00081000 00:28 73016766345                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/mtrand.cpython-310-x86_64-linux-gnu.so
+2ac6c124e000-2ac6c1274000 rw-p 00082000 00:28 73016766345                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/mtrand.cpython-310-x86_64-linux-gnu.so
+2ac6c1274000-2ac6c1276000 rw-p 00000000 00:00 0 
+2ac6c1276000-2ac6c127d000 r--p 00000000 00:28 73016766342                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/bit_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c127d000-2ac6c1295000 r-xp 00007000 00:28 73016766342                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/bit_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c1295000-2ac6c129d000 r--p 0001f000 00:28 73016766342                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/bit_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c129d000-2ac6c129e000 r--p 00026000 00:28 73016766342                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/bit_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c129e000-2ac6c12a2000 rw-p 00027000 00:28 73016766342                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/bit_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c12a2000-2ac6c12a3000 rw-p 00000000 00:00 0 
+2ac6c12a3000-2ac6c12a8000 r--p 00000000 00:28 73016766343                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_common.cpython-310-x86_64-linux-gnu.so
+2ac6c12a8000-2ac6c12d2000 r-xp 00005000 00:28 73016766343                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_common.cpython-310-x86_64-linux-gnu.so
+2ac6c12d2000-2ac6c12d6000 r--p 0002f000 00:28 73016766343                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_common.cpython-310-x86_64-linux-gnu.so
+2ac6c12d6000-2ac6c12d7000 ---p 00033000 00:28 73016766343                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_common.cpython-310-x86_64-linux-gnu.so
+2ac6c12d7000-2ac6c12d8000 r--p 00033000 00:28 73016766343                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_common.cpython-310-x86_64-linux-gnu.so
+2ac6c12d8000-2ac6c12da000 rw-p 00034000 00:28 73016766343                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_common.cpython-310-x86_64-linux-gnu.so
+2ac6c12da000-2ac6c12db000 rw-p 00000000 00:00 0 
+2ac6c12db000-2ac6c12dd000 r--p 00000000 00:28 242675645525               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/binascii.cpython-310-x86_64-linux-gnu.so
+2ac6c12dd000-2ac6c12e2000 r-xp 00002000 00:28 242675645525               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/binascii.cpython-310-x86_64-linux-gnu.so
+2ac6c12e2000-2ac6c12e4000 r--p 00007000 00:28 242675645525               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/binascii.cpython-310-x86_64-linux-gnu.so
+2ac6c12e4000-2ac6c12e5000 ---p 00009000 00:28 242675645525               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/binascii.cpython-310-x86_64-linux-gnu.so
+2ac6c12e5000-2ac6c12e6000 r--p 00009000 00:28 242675645525               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/binascii.cpython-310-x86_64-linux-gnu.so
+2ac6c12e6000-2ac6c12e7000 rw-p 0000a000 00:28 242675645525               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/binascii.cpython-310-x86_64-linux-gnu.so
+2ac6c12e7000-2ac6c12eb000 r--p 00000000 00:28 242677161255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+2ac6c12eb000-2ac6c12f4000 r-xp 00004000 00:28 242677161255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+2ac6c12f4000-2ac6c12f8000 r--p 0000d000 00:28 242677161255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+2ac6c12f8000-2ac6c12f9000 r--p 00010000 00:28 242677161255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+2ac6c12f9000-2ac6c12fa000 rw-p 00011000 00:28 242677161255               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_hashlib.cpython-310-x86_64-linux-gnu.so
+2ac6c12fa000-2ac6c1375000 r--p 00000000 00:28 259853304512               /public/home/group_zyl/.conda/envs/pt200/lib/libcrypto.so.1.1
+2ac6c1375000-2ac6c150a000 r-xp 0007b000 00:28 259853304512               /public/home/group_zyl/.conda/envs/pt200/lib/libcrypto.so.1.1
+2ac6c150a000-2ac6c1597000 r--p 00210000 00:28 259853304512               /public/home/group_zyl/.conda/envs/pt200/lib/libcrypto.so.1.1
+2ac6c1597000-2ac6c1598000 ---p 0029d000 00:28 259853304512               /public/home/group_zyl/.conda/envs/pt200/lib/libcrypto.so.1.1
+2ac6c1598000-2ac6c15c3000 r--p 0029d000 00:28 259853304512               /public/home/group_zyl/.conda/envs/pt200/lib/libcrypto.so.1.1
+2ac6c15c3000-2ac6c15c5000 rw-p 002c8000 00:28 259853304512               /public/home/group_zyl/.conda/envs/pt200/lib/libcrypto.so.1.1
+2ac6c15c5000-2ac6c15c9000 rw-p 00000000 00:00 0 
+2ac6c15c9000-2ac6c15cb000 r--p 00000000 00:28 242677161263               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_blake2.cpython-310-x86_64-linux-gnu.so
+2ac6c15cb000-2ac6c15e0000 r-xp 00002000 00:28 242677161263               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_blake2.cpython-310-x86_64-linux-gnu.so
+2ac6c15e0000-2ac6c15e2000 r--p 00017000 00:28 242677161263               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_blake2.cpython-310-x86_64-linux-gnu.so
+2ac6c15e2000-2ac6c15e3000 r--p 00018000 00:28 242677161263               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_blake2.cpython-310-x86_64-linux-gnu.so
+2ac6c15e3000-2ac6c15e4000 rw-p 00019000 00:28 242677161263               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_blake2.cpython-310-x86_64-linux-gnu.so
+2ac6c15e4000-2ac6c15ed000 r--p 00000000 00:28 73016766344                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_bounded_integers.cpython-310-x86_64-linux-gnu.so
+2ac6c15ed000-2ac6c162b000 r-xp 00009000 00:28 73016766344                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_bounded_integers.cpython-310-x86_64-linux-gnu.so
+2ac6c162b000-2ac6c1635000 r--p 00047000 00:28 73016766344                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_bounded_integers.cpython-310-x86_64-linux-gnu.so
+2ac6c1635000-2ac6c1636000 r--p 00050000 00:28 73016766344                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_bounded_integers.cpython-310-x86_64-linux-gnu.so
+2ac6c1636000-2ac6c1637000 rw-p 00051000 00:28 73016766344                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_bounded_integers.cpython-310-x86_64-linux-gnu.so
+2ac6c1637000-2ac6c1638000 rw-p 00000000 00:00 0 
+2ac6c1638000-2ac6c163c000 r--p 00000000 00:28 73016766340                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-x86_64-linux-gnu.so
+2ac6c163c000-2ac6c164a000 r-xp 00004000 00:28 73016766340                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-x86_64-linux-gnu.so
+2ac6c164a000-2ac6c164e000 r--p 00012000 00:28 73016766340                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-x86_64-linux-gnu.so
+2ac6c164e000-2ac6c164f000 ---p 00016000 00:28 73016766340                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-x86_64-linux-gnu.so
+2ac6c164f000-2ac6c1650000 r--p 00016000 00:28 73016766340                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-x86_64-linux-gnu.so
+2ac6c1650000-2ac6c1652000 rw-p 00017000 00:28 73016766340                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_mt19937.cpython-310-x86_64-linux-gnu.so
+2ac6c1652000-2ac6c1656000 r--p 00000000 00:28 73016766339                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_philox.cpython-310-x86_64-linux-gnu.so
+2ac6c1656000-2ac6c1661000 r-xp 00004000 00:28 73016766339                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_philox.cpython-310-x86_64-linux-gnu.so
+2ac6c1661000-2ac6c1664000 r--p 0000f000 00:28 73016766339                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_philox.cpython-310-x86_64-linux-gnu.so
+2ac6c1664000-2ac6c1665000 ---p 00012000 00:28 73016766339                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_philox.cpython-310-x86_64-linux-gnu.so
+2ac6c1665000-2ac6c1666000 r--p 00012000 00:28 73016766339                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_philox.cpython-310-x86_64-linux-gnu.so
+2ac6c1666000-2ac6c1668000 rw-p 00013000 00:28 73016766339                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_philox.cpython-310-x86_64-linux-gnu.so
+2ac6c1668000-2ac6c166c000 r--p 00000000 00:28 73016766341                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_pcg64.cpython-310-x86_64-linux-gnu.so
+2ac6c166c000-2ac6c167a000 r-xp 00004000 00:28 73016766341                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_pcg64.cpython-310-x86_64-linux-gnu.so
+2ac6c167a000-2ac6c167e000 r--p 00012000 00:28 73016766341                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_pcg64.cpython-310-x86_64-linux-gnu.so
+2ac6c167e000-2ac6c167f000 r--p 00015000 00:28 73016766341                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_pcg64.cpython-310-x86_64-linux-gnu.so
+2ac6c167f000-2ac6c1681000 rw-p 00016000 00:28 73016766341                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_pcg64.cpython-310-x86_64-linux-gnu.so
+2ac6c1681000-2ac6c1682000 rw-p 00000000 00:00 0 
+2ac6c1682000-2ac6c1685000 r--p 00000000 00:28 73016766338                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_sfc64.cpython-310-x86_64-linux-gnu.so
+2ac6c1685000-2ac6c168b000 r-xp 00003000 00:28 73016766338                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_sfc64.cpython-310-x86_64-linux-gnu.so
+2ac6c168b000-2ac6c168d000 r--p 00009000 00:28 73016766338                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_sfc64.cpython-310-x86_64-linux-gnu.so
+2ac6c168d000-2ac6c168e000 ---p 0000b000 00:28 73016766338                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_sfc64.cpython-310-x86_64-linux-gnu.so
+2ac6c168e000-2ac6c168f000 r--p 0000b000 00:28 73016766338                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_sfc64.cpython-310-x86_64-linux-gnu.so
+2ac6c168f000-2ac6c1690000 rw-p 0000c000 00:28 73016766338                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_sfc64.cpython-310-x86_64-linux-gnu.so
+2ac6c1690000-2ac6c16a2000 r--p 00000000 00:28 73016766346                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c16a2000-2ac6c1704000 r-xp 00012000 00:28 73016766346                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c1704000-2ac6c1735000 r--p 00074000 00:28 73016766346                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c1735000-2ac6c1736000 ---p 000a5000 00:28 73016766346                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c1736000-2ac6c1737000 r--p 000a5000 00:28 73016766346                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c1737000-2ac6c175d000 rw-p 000a6000 00:28 73016766346                /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/numpy/random/_generator.cpython-310-x86_64-linux-gnu.so
+2ac6c175d000-2ac6c175f000 rw-p 00000000 00:00 0 
+2ac6c175f000-2ac6c1863000 r--p 00000000 00:28 64427744287                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_avx512.so.1
+2ac6c1863000-2ac6c529a000 r-xp 00104000 00:28 64427744287                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_avx512.so.1
+2ac6c529a000-2ac6c55b6000 r--p 03b3b000 00:28 64427744287                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_avx512.so.1
+2ac6c55b6000-2ac6c55b7000 ---p 03e57000 00:28 64427744287                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_avx512.so.1
+2ac6c55b7000-2ac6c55c0000 r--p 03e57000 00:28 64427744287                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_avx512.so.1
+2ac6c55c0000-2ac6c55ce000 rw-p 03e60000 00:28 64427744287                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_avx512.so.1
+2ac6c55ce000-2ac6c55d0000 rw-p 00000000 00:00 0 
+2ac6c55d0000-2ac6c562b000 r--p 00000000 00:28 64427744270                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_vml_avx512.so.1
+2ac6c562b000-2ac6c5e19000 r-xp 0005b000 00:28 64427744270                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_vml_avx512.so.1
+2ac6c5e19000-2ac6c630e000 r--p 00849000 00:28 64427744270                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_vml_avx512.so.1
+2ac6c630e000-2ac6c6312000 r--p 00d3d000 00:28 64427744270                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_vml_avx512.so.1
+2ac6c6312000-2ac6c632b000 rw-p 00d41000 00:28 64427744270                /public/home/group_zyl/.conda/envs/pt200/lib/libmkl_vml_avx512.so.1
+2ac6c632b000-2ac6c652c000 rw-p 00000000 00:00 0 
+2ac6c652c000-2ac6c652d000 r--p 00000000 00:28 242675645517               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_heapq.cpython-310-x86_64-linux-gnu.so
+2ac6c652d000-2ac6c6530000 r-xp 00001000 00:28 242675645517               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_heapq.cpython-310-x86_64-linux-gnu.so
+2ac6c6530000-2ac6c6533000 r--p 00004000 00:28 242675645517               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_heapq.cpython-310-x86_64-linux-gnu.so
+2ac6c6533000-2ac6c6534000 r--p 00006000 00:28 242675645517               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_heapq.cpython-310-x86_64-linux-gnu.so
+2ac6c6534000-2ac6c6535000 rw-p 00007000 00:28 242675645517               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_heapq.cpython-310-x86_64-linux-gnu.so
+2ac6c6535000-2ac6c6537000 r--p 00000000 00:28 242675645497               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/grp.cpython-310-x86_64-linux-gnu.so
+2ac6c6537000-2ac6c6538000 r-xp 00002000 00:28 242675645497               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/grp.cpython-310-x86_64-linux-gnu.so
+2ac6c6538000-2ac6c6539000 r--p 00003000 00:28 242675645497               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/grp.cpython-310-x86_64-linux-gnu.so
+2ac6c6539000-2ac6c653a000 r--p 00003000 00:28 242675645497               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/grp.cpython-310-x86_64-linux-gnu.so
+2ac6c653a000-2ac6c653b000 rw-p 00004000 00:28 242675645497               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/grp.cpython-310-x86_64-linux-gnu.so
+2ac6c653b000-2ac6c683b000 rw-p 00000000 00:00 0 
+2ac6c683b000-2ac6c683d000 r--p 00000000 00:28 242675645532               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/cmath.cpython-310-x86_64-linux-gnu.so
+2ac6c683d000-2ac6c6849000 r-xp 00002000 00:28 242675645532               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/cmath.cpython-310-x86_64-linux-gnu.so
+2ac6c6849000-2ac6c684b000 r--p 0000e000 00:28 242675645532               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/cmath.cpython-310-x86_64-linux-gnu.so
+2ac6c684b000-2ac6c684c000 ---p 00010000 00:28 242675645532               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/cmath.cpython-310-x86_64-linux-gnu.so
+2ac6c684c000-2ac6c684d000 r--p 00010000 00:28 242675645532               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/cmath.cpython-310-x86_64-linux-gnu.so
+2ac6c684d000-2ac6c684e000 rw-p 00011000 00:28 242675645532               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/cmath.cpython-310-x86_64-linux-gnu.so
+2ac6c684e000-2ac6c6c50000 rw-p 00000000 00:00 0 
+2ac6c6c50000-2ac6c6c51000 r--p 00000000 00:28 242675645488               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+2ac6c6c51000-2ac6c6c52000 r-xp 00001000 00:28 242675645488               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+2ac6c6c52000-2ac6c6c53000 r--p 00002000 00:28 242675645488               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+2ac6c6c53000-2ac6c6c54000 r--p 00002000 00:28 242675645488               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+2ac6c6c54000-2ac6c6c55000 rw-p 00003000 00:28 242675645488               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_contextvars.cpython-310-x86_64-linux-gnu.so
+2ac6c6c55000-2ac6c6c5a000 r--p 00000000 00:28 242677161248               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+2ac6c6c5a000-2ac6c6c5f000 r-xp 00005000 00:28 242677161248               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+2ac6c6c5f000-2ac6c6c63000 r--p 0000a000 00:28 242677161248               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+2ac6c6c63000-2ac6c6c64000 r--p 0000d000 00:28 242677161248               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+2ac6c6c64000-2ac6c6c66000 rw-p 0000e000 00:28 242677161248               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_asyncio.cpython-310-x86_64-linux-gnu.so
+2ac6c6c66000-2ac6c6c76000 -w-s 00000000 00:05 156089                     /dev/nvidia0
+2ac6c6c76000-2ac6c6c86000 -w-s 00000000 00:05 156097                     /dev/nvidia1
+2ac6c6c86000-2ac6c6c87000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c87000-2ac6c6c88000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c88000-2ac6c6c89000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c89000-2ac6c6c8a000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c8a000-2ac6c6c8b000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c8b000-2ac6c6c8c000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c8c000-2ac6c6c8d000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c8d000-2ac6c6c8e000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c8e000-2ac6c6c8f000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c8f000-2ac6c6c90000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c90000-2ac6c6c91000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6c6c91000-2ac6c6d91000 rw-p 00000000 00:00 0 
+2ac6c6d91000-2ac6c6d96000 r--p 00000000 00:28 242677161252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_socket.cpython-310-x86_64-linux-gnu.so
+2ac6c6d96000-2ac6c6d9f000 r-xp 00005000 00:28 242677161252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_socket.cpython-310-x86_64-linux-gnu.so
+2ac6c6d9f000-2ac6c6da7000 r--p 0000e000 00:28 242677161252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_socket.cpython-310-x86_64-linux-gnu.so
+2ac6c6da7000-2ac6c6da8000 ---p 00016000 00:28 242677161252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_socket.cpython-310-x86_64-linux-gnu.so
+2ac6c6da8000-2ac6c6da9000 r--p 00016000 00:28 242677161252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_socket.cpython-310-x86_64-linux-gnu.so
+2ac6c6da9000-2ac6c6daa000 rw-p 00017000 00:28 242677161252               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_socket.cpython-310-x86_64-linux-gnu.so
+2ac6c6daa000-2ac6c6dae000 r--p 00000000 00:28 242677161253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/array.cpython-310-x86_64-linux-gnu.so
+2ac6c6dae000-2ac6c6db7000 r-xp 00004000 00:28 242677161253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/array.cpython-310-x86_64-linux-gnu.so
+2ac6c6db7000-2ac6c6dbb000 r--p 0000d000 00:28 242677161253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/array.cpython-310-x86_64-linux-gnu.so
+2ac6c6dbb000-2ac6c6dbc000 ---p 00011000 00:28 242677161253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/array.cpython-310-x86_64-linux-gnu.so
+2ac6c6dbc000-2ac6c6dbd000 r--p 00011000 00:28 242677161253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/array.cpython-310-x86_64-linux-gnu.so
+2ac6c6dbd000-2ac6c6dbe000 rw-p 00012000 00:28 242677161253               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/array.cpython-310-x86_64-linux-gnu.so
+2ac6c6dbe000-2ac6c6dc0000 r--p 00000000 00:28 242675645503               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_multiprocessing.cpython-310-x86_64-linux-gnu.so
+2ac6c6dc0000-2ac6c6dc1000 r-xp 00002000 00:28 242675645503               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_multiprocessing.cpython-310-x86_64-linux-gnu.so
+2ac6c6dc1000-2ac6c6dc2000 r--p 00003000 00:28 242675645503               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_multiprocessing.cpython-310-x86_64-linux-gnu.so
+2ac6c6dc2000-2ac6c6dc3000 r--p 00003000 00:28 242675645503               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_multiprocessing.cpython-310-x86_64-linux-gnu.so
+2ac6c6dc3000-2ac6c6dc4000 rw-p 00004000 00:28 242675645503               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_multiprocessing.cpython-310-x86_64-linux-gnu.so
+2ac6c6dc4000-2ac6c71c4000 rw-p 00000000 00:00 0 
+2ac6c71c4000-2ac6c71d5000 r--p 00000000 00:28 242677161261               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+2ac6c71d5000-2ac6c71df000 r-xp 00011000 00:28 242677161261               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+2ac6c71df000-2ac6c71eb000 r--p 0001b000 00:28 242677161261               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+2ac6c71eb000-2ac6c71ec000 ---p 00027000 00:28 242677161261               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+2ac6c71ec000-2ac6c71ed000 r--p 00027000 00:28 242677161261               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+2ac6c71ed000-2ac6c71f4000 rw-p 00028000 00:28 242677161261               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_ssl.cpython-310-x86_64-linux-gnu.so
+2ac6c71f4000-2ac6c7213000 r--p 00000000 00:28 356486513802               /public/home/group_zyl/.conda/envs/pt200/lib/libssl.so.1.1
+2ac6c7213000-2ac6c725e000 r-xp 0001f000 00:28 356486513802               /public/home/group_zyl/.conda/envs/pt200/lib/libssl.so.1.1
+2ac6c725e000-2ac6c7277000 r--p 0006a000 00:28 356486513802               /public/home/group_zyl/.conda/envs/pt200/lib/libssl.so.1.1
+2ac6c7277000-2ac6c7278000 ---p 00083000 00:28 356486513802               /public/home/group_zyl/.conda/envs/pt200/lib/libssl.so.1.1
+2ac6c7278000-2ac6c7281000 r--p 00083000 00:28 356486513802               /public/home/group_zyl/.conda/envs/pt200/lib/libssl.so.1.1
+2ac6c7281000-2ac6c7285000 rw-p 0008c000 00:28 356486513802               /public/home/group_zyl/.conda/envs/pt200/lib/libssl.so.1.1
+2ac6c7285000-2ac6c7485000 rw-p 00000000 00:00 0 
+2ac6c7485000-2ac6c7487000 r--p 00000000 00:28 242675645499               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_queue.cpython-310-x86_64-linux-gnu.so
+2ac6c7487000-2ac6c7488000 r-xp 00002000 00:28 242675645499               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_queue.cpython-310-x86_64-linux-gnu.so
+2ac6c7488000-2ac6c7489000 r--p 00003000 00:28 242675645499               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_queue.cpython-310-x86_64-linux-gnu.so
+2ac6c7489000-2ac6c748a000 r--p 00003000 00:28 242675645499               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_queue.cpython-310-x86_64-linux-gnu.so
+2ac6c748a000-2ac6c748b000 rw-p 00004000 00:28 242675645499               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_queue.cpython-310-x86_64-linux-gnu.so
+2ac6c748b000-2ac6c778b000 rw-p 00000000 00:00 0 
+2ac6c778b000-2ac6c77ad000 r--p 00000000 00:28 242677535148               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/nvfuser/_C.cpython-310-x86_64-linux-gnu.so
+2ac6c77ad000-2ac6c7851000 r-xp 00022000 00:28 242677535148               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/nvfuser/_C.cpython-310-x86_64-linux-gnu.so
+2ac6c7851000-2ac6c787b000 r--p 000c6000 00:28 242677535148               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/nvfuser/_C.cpython-310-x86_64-linux-gnu.so
+2ac6c787b000-2ac6c787c000 ---p 000f0000 00:28 242677535148               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/nvfuser/_C.cpython-310-x86_64-linux-gnu.so
+2ac6c787c000-2ac6c7882000 r--p 000f0000 00:28 242677535148               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/nvfuser/_C.cpython-310-x86_64-linux-gnu.so
+2ac6c7882000-2ac6c7883000 rw-p 000f6000 00:28 242677535148               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/nvfuser/_C.cpython-310-x86_64-linux-gnu.so
+2ac6c7883000-2ac6c7983000 rw-p 00000000 00:00 0 
+2ac6c7983000-2ac6c7996000 r--p 00000000 00:28 234088233953               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/gmpy2/gmpy2.cpython-310-x86_64-linux-gnu.so
+2ac6c7996000-2ac6c79e8000 r-xp 00013000 00:28 234088233953               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/gmpy2/gmpy2.cpython-310-x86_64-linux-gnu.so
+2ac6c79e8000-2ac6c7a08000 r--p 00065000 00:28 234088233953               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/gmpy2/gmpy2.cpython-310-x86_64-linux-gnu.so
+2ac6c7a08000-2ac6c7a09000 ---p 00085000 00:28 234088233953               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/gmpy2/gmpy2.cpython-310-x86_64-linux-gnu.so
+2ac6c7a09000-2ac6c7a0a000 r--p 00085000 00:28 234088233953               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/gmpy2/gmpy2.cpython-310-x86_64-linux-gnu.so
+2ac6c7a0a000-2ac6c7a10000 rw-p 00086000 00:28 234088233953               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/gmpy2/gmpy2.cpython-310-x86_64-linux-gnu.so
+2ac6c7a10000-2ac6c7a27000 r-xp 00000000 00:28 266293812684               /public/home/group_zyl/.conda/envs/pt200/lib/libmpc.so.3.1.0
+2ac6c7a27000-2ac6c7c27000 ---p 00017000 00:28 266293812684               /public/home/group_zyl/.conda/envs/pt200/lib/libmpc.so.3.1.0
+2ac6c7c27000-2ac6c7c28000 r--p 00017000 00:28 266293812684               /public/home/group_zyl/.conda/envs/pt200/lib/libmpc.so.3.1.0
+2ac6c7c28000-2ac6c7c29000 rw-p 00018000 00:28 266293812684               /public/home/group_zyl/.conda/envs/pt200/lib/libmpc.so.3.1.0
+2ac6c7c29000-2ac6c7c36000 r--p 00000000 00:28 373665797129               /public/home/group_zyl/.conda/envs/pt200/lib/libmpfr.so.6.0.2
+2ac6c7c36000-2ac6c7c93000 r-xp 0000d000 00:28 373665797129               /public/home/group_zyl/.conda/envs/pt200/lib/libmpfr.so.6.0.2
+2ac6c7c93000-2ac6c7ca4000 r--p 0006a000 00:28 373665797129               /public/home/group_zyl/.conda/envs/pt200/lib/libmpfr.so.6.0.2
+2ac6c7ca4000-2ac6c7ca5000 ---p 0007b000 00:28 373665797129               /public/home/group_zyl/.conda/envs/pt200/lib/libmpfr.so.6.0.2
+2ac6c7ca5000-2ac6c7ca7000 r--p 0007b000 00:28 373665797129               /public/home/group_zyl/.conda/envs/pt200/lib/libmpfr.so.6.0.2
+2ac6c7ca7000-2ac6c7ca8000 rw-p 0007d000 00:28 373665797129               /public/home/group_zyl/.conda/envs/pt200/lib/libmpfr.so.6.0.2
+2ac6c7ca8000-2ac6c7cbb000 r--p 00000000 00:28 330716516372               /public/home/group_zyl/.conda/envs/pt200/lib/libgmp.so.10.4.1
+2ac6c7cbb000-2ac6c7d33000 r-xp 00013000 00:28 330716516372               /public/home/group_zyl/.conda/envs/pt200/lib/libgmp.so.10.4.1
+2ac6c7d33000-2ac6c7d4a000 r--p 0008b000 00:28 330716516372               /public/home/group_zyl/.conda/envs/pt200/lib/libgmp.so.10.4.1
+2ac6c7d4a000-2ac6c7d4b000 ---p 000a2000 00:28 330716516372               /public/home/group_zyl/.conda/envs/pt200/lib/libgmp.so.10.4.1
+2ac6c7d4b000-2ac6c7d4d000 r--p 000a2000 00:28 330716516372               /public/home/group_zyl/.conda/envs/pt200/lib/libgmp.so.10.4.1
+2ac6c7d4d000-2ac6c7d4e000 rw-p 000a4000 00:28 330716516372               /public/home/group_zyl/.conda/envs/pt200/lib/libgmp.so.10.4.1
+2ac6c7d4e000-2ac6c814e000 rw-p 00000000 00:00 0 
+2ac6c814e000-2ac6c8155000 r--p 00000000 00:28 242677161270               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+2ac6c8155000-2ac6c8189000 r-xp 00007000 00:28 242677161270               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+2ac6c8189000-2ac6c8199000 r--p 0003b000 00:28 242677161270               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+2ac6c8199000-2ac6c819a000 r--p 0004a000 00:28 242677161270               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+2ac6c819a000-2ac6c819d000 rw-p 0004b000 00:28 242677161270               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/_decimal.cpython-310-x86_64-linux-gnu.so
+2ac6c819d000-2ac6c881e000 rw-p 00000000 00:00 0 
+2ac6c881e000-2ac6c8821000 r--p 00000000 00:28 242677161269               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/unicodedata.cpython-310-x86_64-linux-gnu.so
+2ac6c8821000-2ac6c8827000 r-xp 00003000 00:28 242677161269               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/unicodedata.cpython-310-x86_64-linux-gnu.so
+2ac6c8827000-2ac6c892f000 r--p 00009000 00:28 242677161269               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/unicodedata.cpython-310-x86_64-linux-gnu.so
+2ac6c892f000-2ac6c8930000 ---p 00111000 00:28 242677161269               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/unicodedata.cpython-310-x86_64-linux-gnu.so
+2ac6c8930000-2ac6c8931000 r--p 00111000 00:28 242677161269               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/unicodedata.cpython-310-x86_64-linux-gnu.so
+2ac6c8931000-2ac6c8932000 rw-p 00112000 00:28 242677161269               /public/home/group_zyl/.conda/envs/pt200/lib/python3.10/lib-dynload/unicodedata.cpython-310-x86_64-linux-gnu.so
+2ac6c8932000-2ac6c9832000 rw-p 00000000 00:00 0 
+2ac6c9832000-2ac6c9842000 -w-s 00000000 00:05 156100                     /dev/nvidia2
+2ac6c9842000-2ac6c9852000 -w-s 00000000 00:05 197786                     /dev/nvidia3
+2ac6c9852000-2ac6c9862000 -w-s 00000000 00:05 197787                     /dev/nvidia4
+2ac6c9862000-2ac6c9872000 -w-s 00000000 00:05 182687                     /dev/nvidia5
+2ac6c9872000-2ac6c9882000 -w-s 00000000 00:05 153311                     /dev/nvidia6
+2ac6c9882000-2ac6c9892000 -w-s 00000000 00:05 206923                     /dev/nvidia7
+2ac6c9892000-2ac6cf892000 ---p 00000000 00:00 0 
+2ac6cf892000-2ac6cf893000 ---p 00000000 00:00 0 
+2ac6cf893000-2ac6cfa93000 rw-p 00000000 00:00 0 
+2ac6cfa93000-2ac6cfa94000 ---p 00000000 00:00 0 
+2ac6cfa94000-2ac6cfc94000 rw-p 00000000 00:00 0 
+2ac6cfc94000-2ac6cfc95000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6cfc95000-2ac6cfc96000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6cfc96000-2ac6cfc97000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6cfc97000-2ac6cfc98000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6cfc98000-2ac6cfc99000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6cfc99000-2ac6cfc9a000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6cfc9a000-2ac6cfe9a000 rw-s 00000000 00:04 3266573                    /dev/zero (deleted)
+2ac6cfe9a000-2ac6cfe9d000 r--p 00000000 00:28 266292073450               /public/home/group_zyl/.conda/envs/pt200/lib/libquadmath.so.0.0.0
+2ac6cfe9d000-2ac6cfebb000 r-xp 00003000 00:28 266292073450               /public/home/group_zyl/.conda/envs/pt200/lib/libquadmath.so.0.0.0
+2ac6cfebb000-2ac6cfed1000 r--p 00021000 00:28 266292073450               /public/home/group_zyl/.conda/envs/pt200/lib/libquadmath.so.0.0.0
+2ac6cfed1000-2ac6cfed2000 ---p 00037000 00:28 266292073450               /public/home/group_zyl/.conda/envs/pt200/lib/libquadmath.so.0.0.0
+2ac6cfed2000-2ac6cfed3000 r--p 00037000 00:28 266292073450               /public/home/group_zyl/.conda/envs/pt200/lib/libquadmath.so.0.0.0
+2ac6cfed3000-2ac6cfed4000 rw-p 00038000 00:28 266292073450               /public/home/group_zyl/.conda/envs/pt200/lib/libquadmath.so.0.0.0
+2ac6cfed4000-2ac6cffd5000 rw-p 00000000 00:00 0 
+2ac6d0000000-2ac6e0000000 ---p 00000000 00:00 0 
+2ac6e0000000-2ac6e0163000 r-xp 00000000 103:03 6323630                   /usr/lib64/libnvidia-ml.so.465.19.01
+2ac6e0163000-2ac6e0362000 ---p 00163000 103:03 6323630                   /usr/lib64/libnvidia-ml.so.465.19.01
+2ac6e0362000-2ac6e03b0000 r--p 00162000 103:03 6323630                   /usr/lib64/libnvidia-ml.so.465.19.01
+2ac6e03b0000-2ac6e03b1000 rw-p 001b0000 103:03 6323630                   /usr/lib64/libnvidia-ml.so.465.19.01
+2ac6e03b1000-2ac6e068a000 rw-p 00000000 00:00 0 
+2ac6e068a000-2ac6e0695000 r-xp 00000000 00:28 485394668707               /public/home/group_zyl/zyl/program/Equi-MPNN/fortran/getneigh.cpython-310-x86_64-linux-gnu.so
+2ac6e0695000-2ac6e0894000 ---p 0000b000 00:28 485394668707               /public/home/group_zyl/zyl/program/Equi-MPNN/fortran/getneigh.cpython-310-x86_64-linux-gnu.so
+2ac6e0894000-2ac6e0895000 r--p 0000a000 00:28 485394668707               /public/home/group_zyl/zyl/program/Equi-MPNN/fortran/getneigh.cpython-310-x86_64-linux-gnu.so
+2ac6e0895000-2ac6e0898000 rw-p 0000b000 00:28 485394668707               /public/home/group_zyl/zyl/program/Equi-MPNN/fortran/getneigh.cpython-310-x86_64-linux-gnu.so
+2ac6e0898000-2ac6e0b23000 r-xp 00000000 00:28 487478795237               /public/software/gcc-9.2.0/lib64/libgfortran.so.5.0.0
+2ac6e0b23000-2ac6e0d23000 ---p 0028b000 00:28 487478795237               /public/software/gcc-9.2.0/lib64/libgfortran.so.5.0.0
+2ac6e0d23000-2ac6e0d24000 r--p 0028b000 00:28 487478795237               /public/software/gcc-9.2.0/lib64/libgfortran.so.5.0.0
+2ac6e0d24000-2ac6e0d26000 rw-p 0028c000 00:28 487478795237               /public/software/gcc-9.2.0/lib64/libgfortran.so.5.0.0
+2ac6e0dd5000-2ac6e1520000 rw-p 00000000 00:00 0 
+2ac6e1520000-2ac6e1521000 ---p 00000000 00:00 0 
+2ac6e1521000-2ac6e1721000 rw-p 00000000 00:00 0 
+2ac6e1721000-2ac6e1722000 ---p 00000000 00:00 0 
+2ac6e1722000-2ac6e1922000 rw-p 00000000 00:00 0 
+2ac6e1922000-2ac6e1923000 ---p 00000000 00:00 0 
+2ac6e1923000-2ac6e1b23000 rw-p 00000000 00:00 0 
+2ac6e1b23000-2ac6e1b24000 ---p 00000000 00:00 0 
+2ac6e1b24000-2ac6e1d24000 rw-p 00000000 00:00 0 
+2ac6e1d24000-2ac6e1d25000 ---p 00000000 00:00 0 
+2ac6e1d25000-2ac6e1f25000 rw-p 00000000 00:00 0 
+2ac6e1f25000-2ac6e1f26000 ---p 00000000 00:00 0 
+2ac6e1f26000-2ac6e2126000 rw-p 00000000 00:00 0 
+2ac6e2126000-2ac6e2127000 ---p 00000000 00:00 0 
+2ac6e2127000-2ac6e2327000 rw-p 00000000 00:00 0 
+2ac6e2327000-2ac6e2328000 ---p 00000000 00:00 0 
+2ac6e2328000-2ac6e2528000 rw-p 00000000 00:00 0 
+2ac6e2528000-2ac6e2529000 ---p 00000000 00:00 0 
+2ac6e2529000-2ac6e2729000 rw-p 00000000 00:00 0 
+2ac6e285a000-2ac6e3b94000 rw-p 00000000 00:00 0 
+2ac6e3b94000-2ac6e3b95000 ---p 00000000 00:00 0 
+2ac6e3b95000-2ac6e3d95000 rw-p 00000000 00:00 0 
+2ac6e3d95000-2ac6e3d96000 ---p 00000000 00:00 0 
+2ac6e3d96000-2ac6e3f96000 rw-p 00000000 00:00 0 
+2ac6e4000000-2ac6e4021000 rw-p 00000000 00:00 0 
+2ac6e4021000-2ac6e8400000 ---p 00000000 00:00 0 
+2ac6e8400000-2ac6e8600000 rw-s 00000000 00:04 3266571                    /dev/zero (deleted)
+2ac6e8600000-2ac6e8800000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6e8800000-2ac6e8a00000 rw-s 00000000 00:04 3266572                    /dev/zero (deleted)
+2ac6e8a00000-2ac6e9000000 ---p 00000000 00:00 0 
+2ac6e9000000-2ac6e9200000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6e9200000-2ac6e9400000 rw-s 00000000 00:04 3266574                    /dev/zero (deleted)
+2ac6e9400000-2ac6e9733000 rw-s 00000000 00:05 156077                     /dev/nvidiactl
+2ac6e9733000-2ac71da00000 ---p 00000000 00:00 0 
+2ac71da00000-2ac71dc00000 rw-s 00000000 00:04 3266576                    /dev/zero (deleted)
+2ac71dc00000-2ac71e000000 ---p 00000000 00:00 0 
+2ac71e000000-2ac71e001000 ---p 00000000 00:00 0 
+2ac71e001000-2ac71e201000 rw-p 00000000 00:00 0 
+2ac71e201000-2ac71e202000 ---p 00000000 00:00 0 
+2ac71e202000-2ac71e402000 rw-p 00000000 00:00 0 
+2ac71e402000-2ac71e403000 ---p 00000000 00:00 0 
+2ac71e403000-2ac71e603000 rw-p 00000000 00:00 0 
+2ac71e603000-2ac71e604000 ---p 00000000 00:00 0 
+2ac71e604000-2ac71e804000 rw-p 00000000 00:00 0 
+2ac7214eb000-2ac7249d6000 rw-p 00000000 00:00 0 
+2ac726000000-2ac729200000 ---p 00000000 00:00 0 
+2ac729200000-2ac7298c1000 rw-s 00000000 00:04 3266577                    /dev/zero (deleted)
+2ac7298c1000-2ac72a000000 ---p 00000000 00:00 0 
+2ac72c000000-2ac72c026000 rw-p 00000000 00:00 0 
+2ac72c026000-2ac732000000 ---p 00000000 00:00 0 
+2ac734000000-2ac734026000 rw-p 00000000 00:00 0 
+2ac734026000-2ac73a000000 ---p 00000000 00:00 0 
+2ac73c000000-2ac73c026000 rw-p 00000000 00:00 0 
+2ac73c026000-2ac740000000 ---p 00000000 00:00 0 
+2ac744000000-2ac744026000 rw-p 00000000 00:00 0 
+2ac744026000-2ac748000000 ---p 00000000 00:00 0 
+2ac74c000000-2ac74c026000 rw-p 00000000 00:00 0 
+2ac74c026000-2ac750000000 ---p 00000000 00:00 0 
+2ac754000000-2ac754026000 rw-p 00000000 00:00 0 
+2ac754026000-2ac758000000 ---p 00000000 00:00 0 
+2ac75c000000-2ac75c026000 rw-p 00000000 00:00 0 
+2ac75c026000-2ac760000000 ---p 00000000 00:00 0 
+2ac760000000-2ac76249d000 rw-p 00000000 00:00 0 
+2ac76249d000-2ac764000000 ---p 00000000 00:00 0 
+2ac764000000-2ac764026000 rw-p 00000000 00:00 0 
+2ac764026000-2ac768000000 ---p 00000000 00:00 0 
+2ac768000000-2ac768026000 rw-p 00000000 00:00 0 
+2ac768026000-2ac76c000000 ---p 00000000 00:00 0 
+2ac76c000000-2ac76c026000 rw-p 00000000 00:00 0 
+2ac76c026000-2ac770000000 ---p 00000000 00:00 0 
+2ac770000000-2ac770026000 rw-p 00000000 00:00 0 
+2ac770026000-2ac774000000 ---p 00000000 00:00 0 
+2ac774000000-2ac774026000 rw-p 00000000 00:00 0 
+2ac774026000-2ac778000000 ---p 00000000 00:00 0 
+2ac778000000-2ac778026000 rw-p 00000000 00:00 0 
+2ac778026000-2ac77c000000 ---p 00000000 00:00 0 
+2ac77c000000-2ac77c026000 rw-p 00000000 00:00 0 
+2ac77c026000-2ac780000000 ---p 00000000 00:00 0 
+2ac780000000-2ac780021000 rw-p 00000000 00:00 0 
+2ac780021000-2ac784000000 ---p 00000000 00:00 0 
+56445c241000-56445c29b000 r--p 00000000 00:28 259853304532               /public/home/group_zyl/.conda/envs/pt200/bin/python3.10
+56445c29b000-56445c4c6000 r-xp 0005a000 00:28 259853304532               /public/home/group_zyl/.conda/envs/pt200/bin/python3.10
+56445c4c6000-56445c5b6000 r--p 00285000 00:28 259853304532               /public/home/group_zyl/.conda/envs/pt200/bin/python3.10
+56445c5b7000-56445c5bc000 r--p 00375000 00:28 259853304532               /public/home/group_zyl/.conda/envs/pt200/bin/python3.10
+56445c5bc000-56445c5ee000 rw-p 0037a000 00:28 259853304532               /public/home/group_zyl/.conda/envs/pt200/bin/python3.10
+56445c5ee000-56445c5f4000 rw-p 00000000 00:00 0 
+56445cce5000-564499be7000 rw-p 00000000 00:00 0                          [heap]
+7ffeaeb15000-7ffeaeb3b000 rw-p 00000000 00:00 0                          [stack]
+7ffeaeb43000-7ffeaeb45000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+/var/spool/torque/mom_priv/jobs/114479.r740xd.SC: line 16: 30263 Aborted                 (core dumped) python3 $path > out

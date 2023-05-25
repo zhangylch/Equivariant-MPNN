@@ -37,7 +37,7 @@ class MPNN(torch.nn.Module):
         itermod=OrderedDict()
         for i in range(iter_loop):
             f_iter="memssage_"+str(i)
-            itermod[f_iter]= MLP.NNMod(nwave,iter_nblock,iter_nl,iter_dropout_p,actfun,layernorm=iter_layernorm)
+            itermod[f_iter]= MLP.NNMod(nwave,iter_nblock,iter_nl,iter_dropout_p,actfun,initbias=torch.ones(nwave),layernorm=iter_layernorm)
         self.itermod= torch.nn.ModuleDict(itermod)
         self.outnn=MLP.NNMod(1,nblock,nl,dropout_p,actfun,initbias=torch.tensor(np.array([initpot])),layernorm=layernorm)
 
@@ -59,18 +59,18 @@ class MPNN(torch.nn.Module):
         density=torch.einsum("ikm,ikm->im",contracted_sph,contracted_sph)
         for iter_loop, (_, m) in enumerate(self.itermod.items()):
             iter_coeff=m(density)[neighlist[1]]
-            iter_density,center_orbital=self.density(weight_distvec,cut_distances,iter_coeff,neighlist[0],neighlist[1],wc_distvec)
+            iter_density,wc_distvec=self.density(weight_distvec,cut_distances,iter_coeff,neighlist[0],neighlist[1],contracted_coeff,wc_distvec)
             # here cente_coeff is for discriminating for the different center atoms.
             density=density+iter_density
         output=self.outnn(density)
         return torch.einsum("ij,i ->",output,center_factor)
 
-    def density(self,weight_distvec,cut_distances,iter_coeff,index_center,index_neigh,wc_distvec):
-        wn_distvec=torch.einsum("i,ij",cut_distances,wc_distvec[index_neigh])
+    def density(self,weight_distvec,cut_distances,iter_coeff,index_center,index_neigh,contracted_coeff,wc_distvec):
+        wn_distvec=torch.einsum("i,ikj -> ikj",cut_distances,wc_distvec[index_neigh])
         weight_distvec=torch.einsum("ij,ikj -> ikj",iter_coeff,weight_distvec)+wn_distvec
         wc_distvec=torch.index_add(wc_distvec,0,index_center,weight_distvec)
-        sph=self.sph_cal(wc_distvec,permute(1,0,2))
-        contracted_sph=torch.einsum("ikj,kjm->ikm",sph,contracted_coeff)
+        sph=self.sph_cal(wc_distvec.permute(1,0,2))
+        contracted_sph=torch.einsum("kij,kjm->ikm",sph,contracted_coeff)
         density=torch.einsum("ikm,ikm->im",contracted_sph,contracted_sph)
         return density,wc_distvec
      

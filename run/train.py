@@ -42,7 +42,7 @@ if table_init==1:
 # learning rate scheduler 
 lr_scheduler=torch.optim.lr_scheduler.ReduceLROnPlateau(optim,factor=decay_factor,patience=patience_epoch,min_lr=end_lr)
 
-scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,optim,model,ema_model)
+scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,optim,model,ema_model,device)
 
 if force_table:
     Vmap_model=vmap(grad_and_value(model),in_dims=(0,0,0,0,0,0),out_dims=(0,0))
