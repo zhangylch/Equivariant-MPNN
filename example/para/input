@@ -6,7 +6,7 @@ force_table= True
 ratio=0.9                      # ratio for vaildation
 find_unused = False
 queue_size=5
-Epoch=10000                    # total numbers of epochs for fitting 
+Epoch=50000                    # total numbers of epochs for fitting 
 dtype='float32'   #float32/float64
 # batchsize: the most import setup for efficiency
 batchsize= 64  # batchsize for each process
@@ -20,11 +20,12 @@ end_lr=1e-5                    # final learning rate
 re_coeff=0.0                    # L2 normalization cofficient
 decay_factor=0.5          # Factor by which the learning rate will be reduced. new_lr = lr * factor. 
 patience_epoch=100             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
+
 #=======================parameters for local environment========================
 maxneigh=25000
 cutoff = 6.2
 max_l=2
-nwave=16
+nwave=8
 norbital=64
 
 #===============================embedded NN structure==========

@@ -9,7 +9,7 @@ queue_size=5
 Epoch=10000                    # total numbers of epochs for fitting 
 dtype='float32'   #float32/float64
 # batchsize: the most import setup for efficiency
-batchsize= 64  # batchsize for each process
+batchsize= 128  # batchsize for each process
 init_weight=[0.1, 0.01]
 final_weight=[0.01, 0.005]
 datafloder="../data/0/"
@@ -19,10 +19,10 @@ start_lr=0.002                  # initial learning rate
 end_lr=1e-5                    # final learning rate
 re_coeff=0.0                    # L2 normalization cofficient
 decay_factor=0.5          # Factor by which the learning rate will be reduced. new_lr = lr * factor. 
-patience_epoch=100             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
+patience_epoch=150             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
 #=======================parameters for local environment========================
-maxneigh=8000
-cutoff = 4.0
+maxneigh=2500
+cutoff = 3.0
 max_l=2
 nwave=8
 norbital=32
