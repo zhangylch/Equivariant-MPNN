@@ -42,6 +42,6 @@ iter_layernorm= True
 
 #======== parameters for final output nn=================================================
 nblock = 1                     # the number of resduial NN blocks
-nl=[64,64]                   # NN structure
+nl=[128,128]                   # NN structure
 dropout_p=[0.0,0.0]            # dropout probability for each hidden layer
-layernorm = True
+layernorm = False

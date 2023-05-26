@@ -27,9 +27,9 @@ class MPNN(torch.nn.Module):
         for l in range(self.rmaxl):
             self.index_l[l*l:(l+1)*(l+1)]=l           
  
-        initbias=torch.ones(nwave,device=device,dtype=Dtype)/maxneigh
+        initbias=torch.ones(nwave,device=device,dtype=Dtype)
         alpha=torch.ones(nwave,device=device,dtype=Dtype)
-        rs=(torch.rand(nwave)*cutoff).to(device).to(Dtype)
+        rs=(torch.rand(nwave)*np.sqrt(cutoff)).to(device).to(Dtype)
         initbias=torch.hstack((initbias,alpha,rs))
         # embedded nn
         self.embnn=MLP.NNMod(self.nwave*3,emb_nblock,emb_nl,np.array([0]),actfun,initbias=initbias,layernorm=emb_layernorm)
