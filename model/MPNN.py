@@ -23,7 +23,7 @@ class MPNN(torch.nn.Module):
         self.contracted_coeff=nn.parameter.Parameter(torch.nn.init.xavier_uniform_(torch.randn(nwave,norbital)))
 
         initbias=torch.ones(nwave,device=device,dtype=Dtype)
-        alpha=(torch.rand(nwave)+0.2).to(device)
+        alpha=(torch.ones(nwave)).to(device)
         rs=(torch.rand(nwave)*cutoff).to(device)
         initbias=torch.hstack((initbias,rs,alpha))
         # embedded nn
@@ -41,13 +41,13 @@ class MPNN(torch.nn.Module):
     def forward(self,cart,neighlist,shifts,center_factor,neigh_factor,species):
         distvec=cart[neighlist[1]]-cart[neighlist[0]]+shifts
         distances=torch.linalg.norm(distvec,dim=1)
-        distvec=distvec.T
         center_coeff=self.embnn(species)
         full_center_list=center_coeff[neighlist[0]]
         neigh_emb=full_center_list*center_coeff[neighlist[1]]
         cut_distances=neigh_factor*self.cutoff_cosine(distances)  
+        distvec=torch.einsum("ij,i ->ji",distvec,cut_distances)
         # for the efficiency of traditional ANN, we do the first calculation of density mannually.
-        radial_func=torch.einsum("i,ij->ij",cut_distances,self.radial_func(distances,neigh_emb[:,self.nwave*2:],neigh_emb[:,self.nwave:self.nwave*2]))
+        radial_func=self.radial_func(distances,neigh_emb[:,self.nwave*2:],neigh_emb[:,self.nwave:self.nwave*2])
         sph=self.sph_cal(distvec)
         orbital=torch.einsum("ij,ij,ki->ikj",radial_func,neigh_emb[:,:self.nwave],sph)
         center_orbital=torch.zeros((cart.shape[0],self.nangular,self.nwave),dtype=cart.dtype,device=cart.device)
