@@ -24,7 +24,7 @@ if torch.cuda.is_available():
     dataloader=cudaloader.CudaDataLoader(dataloader,device,queue_size=queue_size)
 
 #==============================Equi MPNN=================================
-model=MPNN.MPNN(maxneigh/maxnumatom,initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,norbital=norbital,emb_nblock=emb_nblock,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,device=device,Dtype=torch_dtype).to(device)
+model=MPNN.MPNN(maxneigh/maxnumatom,initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,norbital=norbital,emb_nblock=emb_nblock,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,device=device,Dtype=torch_dtype).to(device).to(torch_dtype)
 
 # Exponential Moving Average
 ema_avg = lambda averaged_model_parameter, model_parameter, num_averaged: ema_decay * averaged_model_parameter + (1-ema_decay) * model_parameter
