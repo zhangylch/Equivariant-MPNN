@@ -21,7 +21,7 @@ class MPNN(torch.nn.Module):
         iter_nl.insert(0,self.norbital)
         nl.insert(0,self.norbital)
 
-        self.contracted_coeff=nn.parameter.Parameter(torch.nn.init.xavier_uniform_(torch.randn(self_rmaxl,nwave,norbital)))
+        self.contracted_coeff=nn.parameter.Parameter(torch.nn.init.xavier_uniform_(torch.randn(self.rmaxl,nwave,norbital)))
 
         self.index_l=torch.zeros(self.nangular,device=device,dtype=torch.long)
         for l in range(self.rmaxl):
@@ -48,8 +48,8 @@ class MPNN(torch.nn.Module):
         distvec=cart[neighlist[1]]-cart[neighlist[0]]+shifts
         distances=torch.linalg.norm(distvec,dim=1)
         center_coeff=self.embnn(species)
-        full_center_list=center_coeff[neighlist[0]]
-        neigh_emb=torch.einsum("ij, ij -> ji",full_center_list,center_coeff[neighlist[1]])
+        full_list=center_coeff[neighlist]
+        neigh_emb=torch.einsum("ij, ij -> ji",full_list[0],full_list[1])
         cut_distances=neigh_factor*self.cutoff_cosine(distances)  
         distvec=torch.einsum("ij, i -> ji",distvec,cut_distances)
         contracted_coeff=self.contracted_coeff[self.index_l]

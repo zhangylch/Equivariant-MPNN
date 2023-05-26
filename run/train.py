@@ -31,7 +31,7 @@ ema_avg = lambda averaged_model_parameter, model_parameter, num_averaged: ema_de
 ema_model = AveragedModel(model,avg_fn=ema_avg)
 
 #define optimizer
-optim=torch.optim.AdamW(model.parameters(), lr=start_lr, weight_decay=re_ceff)
+optim=torch.optim.AdamW(model.parameters(), lr=start_lr, weight_decay=re_coeff)
 
 state_loader=restart.Restart()
 if table_init==1:

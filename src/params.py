@@ -24,7 +24,7 @@ check_epoch=10
 #========================parameters for optim=======================
 start_lr=0.01                  # initial learning rate
 end_lr=1e-5                    # final learning rate
-re_ceff=0.0                    # L2 normalization cofficient
+re_coeff=0.0                    # L2 normalization cofficient
 decay_factor=0.5               # Factor by which the learning rate will be reduced. new_lr = lr * factor.      
 patience_epoch=100             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
 #=======================parameters for local environment========================
