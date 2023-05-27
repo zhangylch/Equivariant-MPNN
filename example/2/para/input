@@ -9,7 +9,7 @@ queue_size=5
 Epoch=50000                    # total numbers of epochs for fitting 
 dtype='float32'   #float32/float64
 # batchsize: the most import setup for efficiency
-batchsize= 32  # batchsize for each process
+batchsize= 64  # batchsize for each process
 init_weight=[5, 1]
 final_weight=[0.2, 0.1]
 datafloder="../data/0/"
@@ -23,7 +23,7 @@ patience_epoch=100             # patience epoch  Number of epochs with no improv
 
 #=======================parameters for local environment========================
 maxneigh=25000
-cutoff = 6.2
+cutoff = 6.0
 max_l=2
 nwave=8
 norbital=64
@@ -36,12 +36,12 @@ emb_layernorm=False
 #===========params for MPNN ===============================================
 iter_loop = 0
 iter_nblock = 0          # neural network architecture   
-iter_nl = [32,32]
+iter_nl = [128,128]
 iter_dropout_p=[0.0,0.0]
 iter_layernorm= True
 
 #======== parameters for final output nn=================================================
 nblock = 1                     # the number of resduial NN blocks
-nl=[128,128]                   # NN structure
+nl=[64,64]                   # NN structure
 dropout_p=[0.0,0.0]            # dropout probability for each hidden layer
 layernorm = True

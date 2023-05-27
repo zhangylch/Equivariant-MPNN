@@ -15,7 +15,7 @@ final_weight=[0.2, 0.1]
 datafloder="../data/0/"
 
 #========================parameters for optim=======================
-start_lr=0.002                 # initial learning rate
+start_lr=0.001                 # initial learning rate
 end_lr=1e-5                    # final learning rate
 re_coeff=0.0                    # L2 normalization cofficient
 decay_factor=0.5          # Factor by which the learning rate will be reduced. new_lr = lr * factor. 
@@ -23,25 +23,25 @@ patience_epoch=100             # patience epoch  Number of epochs with no improv
 
 #=======================parameters for local environment========================
 maxneigh=25000
-cutoff = 6.2
+cutoff = 6.0
 max_l=2
 nwave=8
-norbital=64
+norbital=128
 
 #===============================embedded NN structure==========
 emb_nblock=1
-emb_nl=[24]
+emb_nl=[32,32]
 emb_layernorm=False
 
 #===========params for MPNN ===============================================
-iter_loop = 0
+iter_loop = 6
 iter_nblock = 0          # neural network architecture   
-iter_nl = [32,32]
+iter_nl = [128,128]
 iter_dropout_p=[0.0,0.0]
 iter_layernorm= True
 
 #======== parameters for final output nn=================================================
 nblock = 1                     # the number of resduial NN blocks
-nl=[64,64]                   # NN structure
+nl=[128,128]                   # NN structure
 dropout_p=[0.0,0.0]            # dropout probability for each hidden layer
 layernorm = True
