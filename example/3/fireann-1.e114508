@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 16, in <module>
+    dataloader=dataloader.Dataloader(maxneigh,batchsize,ratio=ratio,cutoff=cutoff,dier=cutoff,datafloder=datafloder,force_table=force_table,shuffle=True,device=device,Dtype=torch_dtype)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/dataloader/dataloader.py", line 23, in __init__
+    read_data.Read_data(datafloder=datafloder,force_table=force_table,Dtype=self.np_dtype)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/dataloader/read_data.py", line 17, in Read_data
+    with open(fname2,'r') as f1:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/0/configuration'

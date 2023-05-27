@@ -64,11 +64,11 @@ for iepoch in range(Epoch):
 
     loss_prop_train=torch.zeros(nprop,device=device)
     for data in dataloader:
+        optim.zero_grad()
         coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop=data
         prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
         loss,loss_prop=loss_func.loss_func(prediction,abprop,weight)
         loss_prop_train+=loss_prop.detach()
-        optim.zero_grad(set_to_none=True)
         loss.backward()
         optim.step()   
     # update the EMA parameters

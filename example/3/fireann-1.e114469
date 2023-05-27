@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 27, in <module>
+    model=MPNN.MPNN(maxneigh/maxnumatom,initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,norbital=norbital,emb_nblock=emb_nblock,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,device=device,Dtype=torch_dtype).to(device)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/model/MPNN.py", line 40, in __init__
+    itermod[f_iter]= MLP.NNMod(nwave,iter_nblock,iter_nl,iter_dropout_p,actfun,layernorm=iter_layernorm)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/low_level/MLP.py", line 66, in __init__
+    linear.bias[:]=initbias[:]
+RuntimeError: The expanded size of the tensor (8) must match the existing size (0) at non-singleton dimension 0.  Target sizes: [8].  Tensor sizes: [0]
+terminate called without an active exception
+/var/spool/torque/mom_priv/jobs/114469.r740xd.SC: line 16: 28288 Aborted                 (core dumped) python3 $path > out

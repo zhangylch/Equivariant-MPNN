@@ -21,7 +21,7 @@ class MPNN(torch.nn.Module):
         iter_nl.insert(0,self.norbital)
         nl.insert(0,self.norbital)
 
-        self.contracted_coeff=nn.parameter.Parameter(torch.nn.init.xavier_uniform_(torch.randn(self.rmaxl,nwave,norbital)))
+        #self.contracted_coeff=nn.parameter.Parameter(torch.nn.init.xavier_uniform_(torch.randn(self.rmaxl,nwave,norbital)))
 
         self.index_l=torch.zeros(self.nangular,device=device,dtype=torch.long)
         for l in range(self.rmaxl):
@@ -29,7 +29,7 @@ class MPNN(torch.nn.Module):
  
         initbias=torch.ones(nwave,device=device,dtype=Dtype)
         alpha=torch.ones(nwave,device=device,dtype=Dtype)
-        rs=(torch.rand(nwave)*np.sqrt(cutoff)).to(device).to(Dtype)
+        rs=(torch.rand(nwave)*cutoff).to(device).to(Dtype)
         initbias=torch.hstack((initbias,alpha,rs))
         # embedded nn
         self.embnn=MLP.NNMod(self.nwave*3,emb_nblock,emb_nl,np.array([0]),actfun,initbias=initbias,layernorm=emb_layernorm)
@@ -51,29 +51,28 @@ class MPNN(torch.nn.Module):
         full_list=center_coeff[neighlist]
         neigh_emb=torch.einsum("ij, ij -> ji",full_list[0],full_list[1])
         cut_distances=neigh_factor*self.cutoff_cosine(distances)  
-        distvec=torch.einsum("ij, i -> ji",distvec,cut_distances)
         contracted_coeff=self.contracted_coeff[self.index_l]
         # for the efficiency of traditional ANN, we do the first calculation of density mannually.
         radial_func=self.radial_func(distances,neigh_emb[self.nwave:self.nwave*2],neigh_emb[self.nwave*2:])
-        sph=self.sph_cal(distvec)
-        orbital=torch.einsum("ji,ji,ki->ikj",radial_func,neigh_emb[:self.nwave],sph)
+        sph=self.sph_cal(distvec.T/distances)
+        orbital=torch.einsum("i,ji,ji,ki->ikj",cut_distances,radial_func,neigh_emb[:self.nwave],sph)
         center_orbital=cart.new_zeros((cart.shape[0],self.nangular,self.nwave),dtype=cart.dtype,device=cart.device)
         center_orbital=torch.index_add(center_orbital,0,neighlist[0],orbital)
         contracted_orbital=torch.einsum("ikj,kjm->ikm",center_orbital,contracted_coeff)
-        density=torch.einsum("ikm,ikm->im",contracted_orbital,contracted_orbital)
+        density=torch.einsum("ikm,ikm,in->im",contracted_orbital,contracted_orbital,species)
         for iter_loop, (_, m) in enumerate(self.itermod.items()):
             iter_coeff=m(density)[neighlist[1]]
-            iter_density,center_orbital=self.density(orbital,cut_distances,iter_coeff,neighlist[0],neighlist[1],contracted_coeff,center_orbital)
+            iter_density,center_orbital=self.density(species,orbital,cut_distances,iter_coeff,neighlist[0],neighlist[1],contracted_coeff,center_orbital)
             # here cente_coeff is for discriminating for the different center atoms.
             density=density+iter_density
         output=self.outnn(density)
         return torch.einsum("ij,i ->",output,center_factor)
 
-    def density(self,orbital,cut_distances,iter_coeff,index_center,index_neigh,contracted_coeff,center_orbital):
+    def density(self,species,orbital,cut_distances,iter_coeff,index_center,index_neigh,contracted_coeff,center_orbital):
         weight_orbital=torch.einsum("ij,ikj -> ikj",iter_coeff,orbital)+torch.einsum("ikj,i->ikj",center_orbital[index_neigh],cut_distances)
         center_orbital=torch.index_add(center_orbital,0,index_center,weight_orbital)
         contracted_orbital=torch.einsum("ikj,kjm->ikm",center_orbital,contracted_coeff)
-        density=torch.einsum("ikm,ikm->im",contracted_orbital,contracted_orbital)
+        density=torch.einsum("ikm,ikm,in->im",contracted_orbital,contracted_orbital,species)
         return density,center_orbital
      
     def cutoff_cosine(self,distances):
