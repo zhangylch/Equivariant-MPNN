@@ -2,13 +2,13 @@
 fout=open('nn.err','w')
 #======general setup===========================================
 table_init= 0                # 1: a pretrained or restart  
-force_table= False
+force_table= True
 ratio=0.9                      # ratio for vaildation
-queue_size=10
+queue_size=2
 Epoch=50000                    # total numbers of epochs for fitting 
 dtype='float32'   #float32/float64
 # batchsize: the most import setup for efficiency
-batchsize= 4096   # batchsize for each process
+batchsize= 10   # batchsize for each process
 init_weight=[10, 1]
 final_weight=[0.05, 0.2]
 datafloder="data/"
@@ -24,7 +24,7 @@ patience_epoch=100             # patience epoch  Number of epochs with no improv
 #=======================parameters for local environment========================
 maxneigh=20
 cutoff = 6.5
-max_l=2
+max_l=3
 nwave=8
 ncontract=64
 

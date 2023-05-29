@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 37, in <module>
+    state_loader(model,"Equi-MPNN.pt")
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/restart.py", line 10, in __call__
+    self.forward(model,checkfile)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/restart.py", line 14, in forward
+    model.load_state_dict(checkpoint)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2041, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for MPNN:
+	size mismatch for embnn.nets.0.weight: copying a param with shape torch.Size([24, 1]) from checkpoint, the shape in current model is torch.Size([8, 1]).
+	size mismatch for embnn.nets.0.bias: copying a param with shape torch.Size([24]) from checkpoint, the shape in current model is torch.Size([8]).
+	size mismatch for embnn.nets.1.alpha: copying a param with shape torch.Size([1, 24]) from checkpoint, the shape in current model is torch.Size([1, 8]).
+	size mismatch for embnn.nets.1.beta: copying a param with shape torch.Size([1, 24]) from checkpoint, the shape in current model is torch.Size([1, 8]).
+	size mismatch for embnn.nets.2.weight: copying a param with shape torch.Size([24, 24]) from checkpoint, the shape in current model is torch.Size([8, 8]).
+	size mismatch for embnn.nets.2.bias: copying a param with shape torch.Size([24]) from checkpoint, the shape in current model is torch.Size([8]).
+	size mismatch for embnn.nets.3.alpha: copying a param with shape torch.Size([1, 24]) from checkpoint, the shape in current model is torch.Size([1, 8]).
+	size mismatch for embnn.nets.3.beta: copying a param with shape torch.Size([1, 24]) from checkpoint, the shape in current model is torch.Size([1, 8]).
+	size mismatch for embnn.nets.4.weight: copying a param with shape torch.Size([24, 24]) from checkpoint, the shape in current model is torch.Size([24, 8]).

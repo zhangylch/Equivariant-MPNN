@@ -66,8 +66,7 @@ class MPNN(torch.nn.Module):
             density=density+iter_density
             # here cente_coeff is for discriminating for the different center atoms.
         output=self.outnn(density)
-        energy=torch.einsum("ij,i ->",output,center_factor)
-        return energy
+        return torch.einsum("ij,i ->",output,center_factor)
 
     def density(self,orbital,cut_distances,iter_coeff,index_center,index_neigh,contracted_coeff,center_orbital):
         weight_orbital=torch.einsum("ij,ikj -> ikj",iter_coeff[index_neigh],orbital)+torch.einsum("ikj,i->ikj",center_orbital[index_neigh],cut_distances)

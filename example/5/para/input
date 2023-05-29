@@ -8,7 +8,7 @@ queue_size=10
 Epoch=50000                    # total numbers of epochs for fitting 
 dtype='float32'   #float32/float64
 # batchsize: the most import setup for efficiency
-batchsize= 1024   # batchsize for each process
+batchsize= 2048   # batchsize for each process
 init_weight=[10, 1]
 final_weight=[0.05, 0.2]
 datafloder="data/"
@@ -30,7 +30,7 @@ ncontract=64
 
 #===============================embedded NN structure==========
 emb_nblock=1
-emb_nl=[8,8]
+emb_nl=[24,24]
 emb_layernorm=False
 
 #===========params for MPNN ===============================================

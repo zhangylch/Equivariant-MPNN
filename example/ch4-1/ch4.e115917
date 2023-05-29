@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 74, in <module>
+    loss,loss_prop=loss_func(*data,weight)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 53, in loss_func
+    prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 434, in wrapped
+    return _flat_vmap(
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 619, in _flat_vmap
+    batched_outputs = func(*batched_inputs, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py", line 1255, in wrapper
+    raise RuntimeError('grad_and_value(f)(*args): Expected f(*args) '
+RuntimeError: grad_and_value(f)(*args): Expected f(*args) to return a Tensor, got <class 'tuple'>

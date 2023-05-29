@@ -12,6 +12,7 @@ import src.print_info as print_info
 import src.restart as restart
 import src.scheduler as state_scheduler
 
+torch.autograd.set_detect_anomaly(True)
 dataloader=dataloader.Dataloader(maxneigh,batchsize,ratio=ratio,cutoff=cutoff,dier=cutoff,datafloder=datafloder,force_table=force_table,shuffle=True,device=device,Dtype=torch_dtype)
 
 initpot=dataloader.initpot
@@ -45,15 +46,21 @@ scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,optim,model
 
 if force_table:
     Vmap_model=vmap(grad_and_value(model),in_dims=(0,0,0,0,0,0),out_dims=(0,0))
+    # define the loss function
+    def loss_func(coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop,weight):
+        prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
+        lossprop=torch.cat([torch.sum(torch.square(ipred-ilabel)).reshape(-1) for ipred, ilabel in zip(prediction,abprop)])
+        loss=torch.inner(lossprop,weight)
+        return loss,lossprop
 else:
-    Vmap_model=vmap(model,in_dims=(0,0,0,0,0,0),out_dims=(0,))
-
-# define the loss function
-def loss_func(coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop,weight):
-    prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
-    lossprop=torch.cat([torch.sum(torch.square(ipred-ilabel)).reshape(-1) for ipred, ilabel in zip(prediction,abprop)])
-    loss=torch.inner(lossprop,weight)
-    return loss,lossprop
+    Vmap_model=vmap(model,in_dims=(0,0,0,0,0,0),out_dims=0)
+    # define the loss function
+    def loss_func(coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop,weight):
+        prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
+        for label in abprop:
+            lossprop=torch.sum(torch.square(prediction-label))
+        loss=lossprop*weight
+        return loss,lossprop
 
 print_err=print_info.Print_Info(end_lr)
 
@@ -67,7 +74,7 @@ for iepoch in range(Epoch):
     else:
         ntrain=dataloader.ntrain
         nval=dataloader.nval
-     
+
     loss_prop_train=torch.zeros(nprop,device=device)
     for data in dataloader:
         optim.zero_grad(set_to_none=True)

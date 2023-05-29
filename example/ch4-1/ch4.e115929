@@ -1,0 +1,62 @@
+/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/autograd/__init__.py:303: UserWarning: Error detected in MulBackward0. Traceback of forward call that caused the error:
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 81, in <module>
+    loss,loss_prop=loss_func(*data,weight)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 51, in loss_func
+    prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 434, in wrapped
+    return _flat_vmap(
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 619, in _flat_vmap
+    batched_outputs = func(*batched_inputs, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py", line 1245, in wrapper
+    output = func(*args, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/model/MPNN.py", line 57, in forward
+    sph=self.sph_cal(distvec.T)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/low_level/sph_cal.py", line 68, in forward
+    sph[self.yr_rev[l,l]]=self.prefactor1[l]*(cart[0]*sph[self.yr_rev[l-1,l-1]]+cart[1]*sph[self.yr[l-1,l-1]])
+ (Triggered internally at /opt/conda/conda-bld/pytorch_1682343967769/work/torch/csrc/autograd/python_anomaly_mode.cpp:114.)
+  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 81, in <module>
+    loss,loss_prop=loss_func(*data,weight)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 51, in loss_func
+    prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 434, in wrapped
+    return _flat_vmap(
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 619, in _flat_vmap
+    batched_outputs = func(*batched_inputs, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/vmap.py", line 39, in fn
+    return f(*args, **kwargs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py", line 1267, in wrapper
+    flat_grad_input = _autograd_grad(flat_outputs, flat_diff_args, create_graph=True)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/_functorch/eager_transforms.py", line 113, in _autograd_grad
+    grad_inputs = torch.autograd.grad(diff_outputs, inputs, grad_outputs,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/autograd/__init__.py", line 303, in grad
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: one of the variables needed for gradient computation has been modified by an inplace operation: [torch.cuda.FloatTensor [20]], which is output 0 of AsStridedBackward0, is at version 15; expected version 14 instead. Hint: the backtrace further above shows the operation that failed to compute its gradient. The variable in question was changed in there or anywhere later. Good luck!
