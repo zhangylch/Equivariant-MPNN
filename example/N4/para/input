@@ -1,0 +1,47 @@
+# open a file for output information in iterations
+fout=open('nn.err','w')
+#======general setup===========================================
+table_init= 0                # 1: a pretrained or restart  
+force_table= False
+ratio=0.9                      # ratio for vaildation
+queue_size=5
+Epoch=50000                    # total numbers of epochs for fitting 
+dtype='float32'   #float32/float64
+# batchsize: the most import setup for efficiency
+batchsize= 1024    # batchsize for each process
+init_weight=[1, 1]
+final_weight=[1, 0.2]
+datafloder="data/"
+check_epoch=5
+
+#========================parameters for optim=======================
+start_lr=0.002                 # initial learning rate
+end_lr=2e-6                    # final learning rate
+re_coeff=0.0                    # L2 normalization cofficient
+decay_factor=0.5          # Factor by which the learning rate will be reduced. new_lr = lr * factor. 
+patience_epoch=150             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
+
+#=======================parameters for local environment========================
+maxneigh=12
+cutoff = 55.0
+max_l=2
+nwave=30
+ncontract=128
+
+#===============================embedded NN structure==========
+emb_nblock=1
+emb_nl=[24,24]
+emb_layernorm=False
+
+#===========params for MPNN ===============================================
+iter_loop = 1
+iter_nblock = 1          # neural network architecture   
+iter_nl = [128,128]
+iter_dropout_p=[0.0,0.0]
+iter_layernorm= True
+
+#======== parameters for final output nn=================================================
+nblock = 1                     # the number of resduial NN blocks
+nl=[128,128]                   # NN structure
+dropout_p=[0.0,0.0]            # dropout probability for each hidden layer
+layernorm = True

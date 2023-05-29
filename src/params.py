@@ -32,7 +32,7 @@ maxneigh=100000
 cutoff = 4.0
 max_l=2
 nwave=8
-norbital=None
+ncontract=None
 #==================================data floder=============================
 datafloder="./"
 
@@ -75,7 +75,7 @@ else:
 
 torch.set_default_dtype(torch_dtype)
 
-if not norbital: norbital=int((max_l+1)*nwave*(nwave+1)/2)
+if not ncontract: ncontract=int(nwave*(nwave+1)/2)
 
 gpu_sel()
 

@@ -9,11 +9,8 @@ from torch.optim.swa_utils import AveragedModel,SWALR
 import dataloader.dataloader as dataloader
 import dataloader.cudaloader as cudaloader  
 import src.print_info as print_info
-import src.loss_func as loss_func
 import src.restart as restart
 import src.scheduler as state_scheduler
-
-torch.autograd.set_detect_anomaly(True)
 
 dataloader=dataloader.Dataloader(maxneigh,batchsize,ratio=ratio,cutoff=cutoff,dier=cutoff,datafloder=datafloder,force_table=force_table,shuffle=True,device=device,Dtype=torch_dtype)
 
@@ -26,7 +23,7 @@ if torch.cuda.is_available():
     dataloader=cudaloader.CudaDataLoader(dataloader,device,queue_size=queue_size)
 
 #==============================Equi MPNN=================================
-model=MPNN.MPNN(initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,norbital=norbital,emb_nblock=emb_nblock,emb_nl=emb_nl,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,device=device,Dtype=torch_dtype).to(device).to(torch_dtype)
+model=MPNN.MPNN(initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,ncontract=ncontract,emb_nblock=emb_nblock,emb_nl=emb_nl,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,device=device,Dtype=torch_dtype).to(device).to(torch_dtype)
 
 # Exponential Moving Average
 ema_avg = lambda averaged_model_parameter, model_parameter, num_averaged: ema_decay * averaged_model_parameter + (1-ema_decay) * model_parameter
@@ -49,7 +46,14 @@ scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,optim,model
 if force_table:
     Vmap_model=vmap(grad_and_value(model),in_dims=(0,0,0,0,0,0),out_dims=(0,0))
 else:
-    Vmap_model=vmap(model,in_dims=(0,0,0,0,0,0),out_dims=0)
+    Vmap_model=vmap(model,in_dims=(0,0,0,0,0,0),out_dims=(0,))
+
+# define the loss function
+def loss_func(coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop,weight):
+    prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
+    lossprop=torch.cat([torch.sum(torch.square(ipred-ilabel)).reshape(-1) for ipred, ilabel in zip(prediction,abprop)])
+    loss=torch.inner(lossprop,weight)
+    return loss,lossprop
 
 print_err=print_info.Print_Info(end_lr)
 
@@ -63,31 +67,28 @@ for iepoch in range(Epoch):
     else:
         ntrain=dataloader.ntrain
         nval=dataloader.nval
-
+     
     loss_prop_train=torch.zeros(nprop,device=device)
     for data in dataloader:
-        optim.zero_grad()
-        coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop=data
-        prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
-        loss,loss_prop=loss_func.loss_func(prediction,abprop,weight)
-        loss_prop_train+=loss_prop.detach()
+        optim.zero_grad(set_to_none=True)
+        loss,loss_prop=loss_func(*data,weight)
+        #for name, params in model.named_parameters():
+        #    print(name,params)
         loss.backward()
         optim.step()   
+        loss_prop_train+=loss_prop.detach()
     # update the EMA parameters
     ema_model.update_parameters(model)
 
-        #  calculate the val error
+    #  calculate the val error
     loss_val=torch.zeros(1,device=device)
     loss_prop_val=torch.zeros(nprop,device=device)
     for data in dataloader:
-        coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop=data
-        prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
-        loss,loss_prop=loss_func.loss_func(prediction,abprop,weight)
+        loss,loss_prop=loss_func(*data,weight)
         loss_val+=loss.detach()
         loss_prop_val+=loss_prop.detach()
     loss_prop_train=torch.sqrt(loss_prop_train/ntrain)
     loss_prop_val=torch.sqrt(loss_prop_val/nval)
-
     if np.mod(iepoch,check_epoch)==0: scheduler(loss_val)
 
     lr_scheduler.step(loss_val)
