@@ -2,7 +2,7 @@
 fout=open('nn.err','w')
 #======general setup===========================================
 table_init= 0                # 1: a pretrained or restart  
-force_table= False
+force_table= True
 ratio=0.9                      # ratio for vaildation
 find_unused = False
 queue_size=5
@@ -22,7 +22,7 @@ patience_epoch=100             # patience epoch  Number of epochs with no improv
 #=======================parameters for local environment========================
 maxneigh=25000
 cutoff = 6.2
-max_l=2
+max_l=4
 nwave=8
 norbital=64
 #==================================data floder=============================
