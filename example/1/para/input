@@ -2,7 +2,7 @@
 fout=open('nn.err','w')
 #======general setup===========================================
 table_init= 0                # 1: a pretrained or restart  
-force_table= True
+force_table= False
 ratio=0.9                      # ratio for vaildation
 find_unused = False
 queue_size=5
