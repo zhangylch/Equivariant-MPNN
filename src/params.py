@@ -24,7 +24,7 @@ check_epoch=10
 #========================parameters for optim=======================
 start_lr=0.01                  # initial learning rate
 end_lr=1e-5                    # final learning rate
-re_ceff=0.0                    # L2 normalization cofficient
+re_coeff=0.0                    # L2 normalization cofficient
 decay_factor=0.5               # Factor by which the learning rate will be reduced. new_lr = lr * factor.      
 patience_epoch=100             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
 datafloder="./"
@@ -34,7 +34,13 @@ maxneigh=100000
 cutoff = 4.0
 max_l=2
 nwave=8
+<<<<<<< HEAD
 norbital=None
+=======
+ncontract=None
+#==================================data floder=============================
+datafloder="./"
+>>>>>>> dev
 
 #===============================embedded NN structure==========
 emb_nblock=1
@@ -67,6 +73,12 @@ with open('para/input','r') as f1:
               m=string.split('#')
               exec(m[0])
 
+
+# add the input neuron for each neuron
+emb_nl.insert(0,1)
+iter_nl.insert(0,ncontract)
+nl.insert(0,ncontract)
+
 # torch and numpy dtype
 if dtype=='float64':
     torch_dtype=torch.float64
@@ -75,9 +87,10 @@ else:
     torch_dtype=torch.float32
     np_dtype=np.float32
 
+
 torch.set_default_dtype(torch_dtype)
 
-if not norbital: norbital=int((max_l+1)*nwave*(nwave+1)/2)
+if not ncontract: ncontract=int(nwave*(nwave+1)/2)
 
 gpu_sel()
 
@@ -92,3 +105,6 @@ else:
     nprop=1
     init_weight=init_weight[0:1]
     final_weight=final_weight[0:1]
+
+atom_species=torch.tensor(np.array(atom_species)).reshape(-1,1).to(torch_dtype).to(device)
+

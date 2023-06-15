@@ -26,8 +26,11 @@ subroutine get_neigh(cart,coor,atomindex,shifts,maxneigh,numatom,scutnum)
          sca=nint(fcoor(:,iatom)-fcoor(:,1))
          coor(:,iatom)=coor(:,iatom)-sca(1)*matrix(:,1)-sca(2)*matrix(:,2)-sca(3)*matrix(:,3)
          do j=1,3
-           if(coor(j,iatom)<oriminv(j)) oriminv(j)=coor(j,iatom)
-           if(coor(j,iatom)>orimaxv(j)) orimaxv(j)=coor(j,iatom)
+           if(coor(j,iatom)<oriminv(j)) then
+             oriminv(j)=coor(j,iatom)
+           else if(coor(j,iatom)>orimaxv(j)) then
+             orimaxv(j)=coor(j,iatom)
+           end if
          end do
        end do
        rangecoor=orimaxv-oriminv+2.0*rc
@@ -56,7 +59,6 @@ subroutine get_neigh(cart,coor,atomindex,shifts,maxneigh,numatom,scutnum)
            end if
          end do
        end do
-       scutnum=1
        ninit=(length+1)/2
        do iatom = 1, numatom
          sca=ceiling(coor(:,iatom)/dier)
@@ -75,9 +77,9 @@ subroutine get_neigh(cart,coor,atomindex,shifts,maxneigh,numatom,scutnum)
                  tmp1=imageatom(:,j,l)-coor(:,iatom)
                  tmp=dot_product(tmp1,tmp1)
                  if(tmp<=rcsq) then
+                   scutnum=scutnum+1
                    atomindex(:,scutnum)=[iatom-1,j-1]
                    shifts(:,scutnum)=shiftvalue(:,l)
-                   scutnum=scutnum+1
                  end if
                end do
              end do
@@ -87,9 +89,8 @@ subroutine get_neigh(cart,coor,atomindex,shifts,maxneigh,numatom,scutnum)
        end do
        deallocate(index_numrs)
        deallocate(index_rs)
-       atomindex(1,scutnum:maxneigh)=0
-       atomindex(2,scutnum:maxneigh)=1
-       scutnum=scutnum-1
+       atomindex(1,scutnum+1:maxneigh)=0
+       atomindex(2,scutnum+1:maxneigh)=1
      return
 end subroutine get_neigh
    
