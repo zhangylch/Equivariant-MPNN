@@ -1,0 +1,213 @@
+compute01
+     state = free
+     np = 28
+     ntype = cluster
+     status = rectime=1685351982,varattr=,jobs=,state=free,netload=314130712043,gres=,loadave=0.00,ncpus=28,physmem=131489632kb,availmem=196294796kb,totmem=198598492kb,idletime=3633588,nusers=3,nsessions=5,sessions=24345 24363 24520 24712 32588,uname=Linux node01 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute02
+     state = free
+     np = 28
+     ntype = cluster
+     status = rectime=1685351987,varattr=,jobs=,state=free,netload=128041089047,gres=,loadave=0.00,ncpus=28,physmem=131489632kb,availmem=196430112kb,totmem=198598492kb,idletime=3633345,nusers=2,nsessions=4,sessions=21527 21539 21730 21995,uname=Linux node02 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute03
+     state = free
+     np = 28
+     ntype = cluster
+     status = rectime=1685351948,varattr=,jobs=,state=free,netload=591316917366,gres=,loadave=0.00,ncpus=28,physmem=131489632kb,availmem=196258896kb,totmem=198598492kb,idletime=3633200,nusers=2,nsessions=4,sessions=15402 15438 15859 16490,uname=Linux node03 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute04
+     state = job-exclusive
+     np = 28
+     ntype = cluster
+     jobs = 0/113990.r740xd, 1/113990.r740xd, 2/113990.r740xd, 3/113990.r740xd, 4/113991.r740xd, 5/113991.r740xd, 6/113991.r740xd, 7/113991.r740xd, 8/113992.r740xd, 9/113992.r740xd, 10/113992.r740xd, 11/113992.r740xd, 12/113993.r740xd, 13/113993.r740xd, 14/113993.r740xd, 15/113993.r740xd, 16/113994.r740xd, 17/113994.r740xd, 18/113994.r740xd, 19/113994.r740xd, 20/113995.r740xd, 21/113995.r740xd, 22/113995.r740xd, 23/113995.r740xd, 24/113996.r740xd, 25/113996.r740xd, 26/113996.r740xd, 27/113996.r740xd
+     status = rectime=1685351976,varattr=,jobs=113990.r740xd 113991.r740xd 113992.r740xd 113993.r740xd 113994.r740xd 113995.r740xd 113996.r740xd,state=free,netload=859815673220,gres=,loadave=28.00,ncpus=28,physmem=131489632kb,availmem=196261008kb,totmem=198598492kb,idletime=3633193,nusers=3,nsessions=11,sessions=15791 15827 16257 16820 86518 86537 86572 86635 86693 86740 86799,uname=Linux node04 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute05
+     state = down
+     np = 28
+     ntype = cluster
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute06
+     state = job-exclusive
+     np = 28
+     ntype = cluster
+     jobs = 0/113998.r740xd, 1/113964.r740xd, 2/113964.r740xd, 3/113964.r740xd, 4/113964.r740xd, 5/113965.r740xd, 6/113965.r740xd, 7/113965.r740xd, 8/113965.r740xd, 9/113966.r740xd, 10/113966.r740xd, 11/113966.r740xd, 12/113966.r740xd, 13/113967.r740xd, 14/113967.r740xd, 15/113967.r740xd, 16/113967.r740xd, 17/113968.r740xd, 18/113968.r740xd, 19/113968.r740xd, 20/113968.r740xd, 21/113969.r740xd, 22/113969.r740xd, 23/113969.r740xd, 24/113969.r740xd, 25/113998.r740xd, 26/113998.r740xd, 27/113998.r740xd
+     status = rectime=1685351955,varattr=,jobs=113964.r740xd 113965.r740xd 113966.r740xd 113967.r740xd 113968.r740xd 113969.r740xd 113998.r740xd,state=free,netload=949156099726,gres=,loadave=28.00,ncpus=28,physmem=131489632kb,availmem=196355616kb,totmem=198598492kb,idletime=3633387,nusers=3,nsessions=11,sessions=24307 24339 24627 24835 75425 88348 88369 88476 88505 88553 88607,uname=Linux node06 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute07
+     state = down
+     np = 28
+     ntype = cluster
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute08
+     state = down
+     np = 28
+     ntype = cluster
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute09
+     state = down
+     np = 28
+     ntype = cluster
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute10
+     state = down
+     np = 28
+     ntype = cluster
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute11
+     state = job-exclusive
+     np = 28
+     ntype = cluster
+     jobs = 0/113957.r740xd, 1/113957.r740xd, 2/113957.r740xd, 3/113957.r740xd, 4/113958.r740xd, 5/113958.r740xd, 6/113958.r740xd, 7/113958.r740xd, 8/113959.r740xd, 9/113959.r740xd, 10/113959.r740xd, 11/113959.r740xd, 12/113960.r740xd, 13/113960.r740xd, 14/113960.r740xd, 15/113960.r740xd, 16/113961.r740xd, 17/113961.r740xd, 18/113961.r740xd, 19/113961.r740xd, 20/113962.r740xd, 21/113962.r740xd, 22/113962.r740xd, 23/113962.r740xd, 24/113963.r740xd, 25/113963.r740xd, 26/113963.r740xd, 27/113963.r740xd
+     status = rectime=1685351987,varattr=,jobs=113957.r740xd 113958.r740xd 113959.r740xd 113960.r740xd 113961.r740xd 113962.r740xd 113963.r740xd,state=free,netload=705803077151,gres=,loadave=28.00,ncpus=28,physmem=131489632kb,availmem=196306872kb,totmem=198598492kb,idletime=3633215,nusers=3,nsessions=11,sessions=20790 20801 20959 21149 79549 79567 79602 79665 79721 79793 79871,uname=Linux node11 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute12
+     state = job-exclusive
+     np = 28
+     ntype = cluster
+     jobs = 0/113976.r740xd, 1/113976.r740xd, 2/113976.r740xd, 3/113976.r740xd, 4/113977.r740xd, 5/113977.r740xd, 6/113977.r740xd, 7/113977.r740xd, 8/113978.r740xd, 9/113978.r740xd, 10/113978.r740xd, 11/113978.r740xd, 12/113979.r740xd, 13/113979.r740xd, 14/113979.r740xd, 15/113979.r740xd, 16/113980.r740xd, 17/113980.r740xd, 18/113980.r740xd, 19/113980.r740xd, 20/113981.r740xd, 21/113981.r740xd, 22/113981.r740xd, 23/113981.r740xd, 24/113982.r740xd, 25/113982.r740xd, 26/113982.r740xd, 27/113982.r740xd
+     status = rectime=1685351961,varattr=,jobs=113976.r740xd 113977.r740xd 113978.r740xd 113979.r740xd 113980.r740xd 113981.r740xd 113982.r740xd,state=free,netload=808188667082,gres=,loadave=28.00,ncpus=28,physmem=131489632kb,availmem=196338348kb,totmem=198598492kb,idletime=3633187,nusers=3,nsessions=11,sessions=26622 26651 27063 27782 78403 78421 78458 78516 78573 78649 78725,uname=Linux node12 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute13
+     state = job-exclusive
+     np = 28
+     ntype = cluster
+     jobs = 0/113983.r740xd, 1/113983.r740xd, 2/113983.r740xd, 3/113983.r740xd, 4/113984.r740xd, 5/113984.r740xd, 6/113984.r740xd, 7/113984.r740xd, 8/113985.r740xd, 9/113985.r740xd, 10/113985.r740xd, 11/113985.r740xd, 12/113986.r740xd, 13/113986.r740xd, 14/113986.r740xd, 15/113986.r740xd, 16/113987.r740xd, 17/113987.r740xd, 18/113987.r740xd, 19/113987.r740xd, 20/113988.r740xd, 21/113988.r740xd, 22/113988.r740xd, 23/113988.r740xd, 24/113989.r740xd, 25/113989.r740xd, 26/113989.r740xd, 27/113989.r740xd
+     status = rectime=1685351954,varattr=,jobs=113983.r740xd 113984.r740xd 113985.r740xd 113986.r740xd 113987.r740xd 113988.r740xd 113989.r740xd,state=free,netload=715801511691,gres=,loadave=28.01,ncpus=28,physmem=131489632kb,availmem=196323148kb,totmem=198598492kb,idletime=3633465,nusers=3,nsessions=11,sessions=24308 24341 24764 25413 53351 53370 53402 53467 53522 53597 53673,uname=Linux node13 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute14
+     state = down
+     np = 28
+     ntype = cluster
+     jobs = 0/68349.r740xd
+     status = rectime=1683600867,varattr=,jobs=68349.r740xd,state=free,netload=19755623115,gres=,loadave=504.64,ncpus=28,physmem=131489632kb,availmem=195307000kb,totmem=198598492kb,idletime=1882167,nusers=4,nsessions=7,sessions=20743 20751 20892 21084 49276 49681 206538,uname=Linux node14 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute15
+     state = down
+     np = 28
+     ntype = cluster
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute16
+     state = job-exclusive
+     np = 28
+     ntype = cluster
+     jobs = 0/113970.r740xd, 1/113970.r740xd, 2/113970.r740xd, 3/113970.r740xd, 4/113971.r740xd, 5/113971.r740xd, 6/113971.r740xd, 7/113971.r740xd, 8/113972.r740xd, 9/113972.r740xd, 10/113972.r740xd, 11/113972.r740xd, 12/113997.r740xd, 13/113973.r740xd, 14/113973.r740xd, 15/113973.r740xd, 16/113973.r740xd, 17/113974.r740xd, 18/113974.r740xd, 19/113974.r740xd, 20/113974.r740xd, 21/113975.r740xd, 22/113975.r740xd, 23/113975.r740xd, 24/113975.r740xd, 25/113997.r740xd, 26/113997.r740xd, 27/113997.r740xd
+     status = rectime=1685351970,varattr=,jobs=113970.r740xd 113971.r740xd 113972.r740xd 113973.r740xd 113974.r740xd 113975.r740xd 113997.r740xd,state=free,netload=1063101714661,gres=,loadave=28.00,ncpus=28,physmem=131489632kb,availmem=196302908kb,totmem=198598492kb,idletime=3633149,nusers=3,nsessions=11,sessions=22115 22124 22264 22454 54088 67076 67094 67135 67192 67257 67322,uname=Linux node16 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute17
+     state = free
+     np = 96
+     ntype = cluster
+     jobs = 94/115063.r740xd
+     status = rectime=1685351978,varattr=,jobs=115063.r740xd,state=free,netload=1355581444521,gres=,loadave=1.00,ncpus=96,physmem=395632380kb,availmem=525202032kb,totmem=529850104kb,idletime=3110070,nusers=3,nsessions=5,sessions=30058 30074 30354 30578 337268,uname=Linux node17 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute18
+     state = free
+     np = 96
+     ntype = cluster
+     status = rectime=1685351959,varattr=,jobs=,state=free,netload=1300093835814,gres=,loadave=0.00,ncpus=96,physmem=395632388kb,availmem=525413016kb,totmem=529850112kb,idletime=3025182,nusers=2,nsessions=4,sessions=39121 39127 39245 39469,uname=Linux node18 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute19
+     state = free
+     np = 96
+     ntype = cluster
+     jobs = 92/115033.r740xd
+     status = rectime=1685351980,varattr=,jobs=115033.r740xd,state=free,netload=3131619810752,gres=,loadave=1.00,ncpus=96,physmem=395632368kb,availmem=525324104kb,totmem=529850092kb,idletime=2185729,nusers=3,nsessions=5,sessions=38989 38995 39113 39333 633958,uname=Linux node19 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute20
+     state = free
+     np = 96
+     ntype = cluster
+     status = rectime=1685351951,varattr=,jobs=,state=free,netload=2875976137162,gres=,loadave=0.00,ncpus=96,physmem=395632400kb,availmem=525202148kb,totmem=529850124kb,idletime=2185684,nusers=2,nsessions=4,sessions=39078 39084 39202 39427,uname=Linux node20 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute21
+     state = job-exclusive
+     np = 32
+     ntype = cluster
+     jobs = 0/115850.r740xd, 1/115850.r740xd, 2/115850.r740xd, 3/115850.r740xd, 4/115850.r740xd, 5/115850.r740xd, 6/115850.r740xd, 7/115850.r740xd, 8/115850.r740xd, 9/115850.r740xd, 10/115850.r740xd, 11/115850.r740xd, 12/115850.r740xd, 13/115850.r740xd, 14/115850.r740xd, 15/115850.r740xd, 16/115851.r740xd, 17/115851.r740xd, 18/115851.r740xd, 19/115851.r740xd, 20/115851.r740xd, 21/115851.r740xd, 22/115851.r740xd, 23/115851.r740xd, 24/115851.r740xd, 25/115851.r740xd, 26/115851.r740xd, 27/115851.r740xd, 28/115851.r740xd, 29/115851.r740xd, 30/115851.r740xd, 31/115851.r740xd
+     status = rectime=1685351952,varattr=,jobs=115850.r740xd 115851.r740xd,state=free,netload=78584409419,gres=,loadave=0.98,ncpus=32,physmem=196679936kb,availmem=254442892kb,totmem=263788796kb,idletime=2185680,nusers=2,nsessions=4,sessions=17825 17832 17971 18138,uname=Linux node21 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+compute22
+     state = job-exclusive
+     np = 32
+     ntype = cluster
+     jobs = 0/115848.r740xd, 1/115848.r740xd, 2/115848.r740xd, 3/115848.r740xd, 4/115848.r740xd, 5/115848.r740xd, 6/115848.r740xd, 7/115848.r740xd, 8/115848.r740xd, 9/115848.r740xd, 10/115848.r740xd, 11/115848.r740xd, 12/115848.r740xd, 13/115848.r740xd, 14/115848.r740xd, 15/115848.r740xd, 16/115849.r740xd, 17/115849.r740xd, 18/115849.r740xd, 19/115849.r740xd, 20/115849.r740xd, 21/115849.r740xd, 22/115849.r740xd, 23/115849.r740xd, 24/115849.r740xd, 25/115849.r740xd, 26/115849.r740xd, 27/115849.r740xd, 28/115849.r740xd, 29/115849.r740xd, 30/115849.r740xd, 31/115849.r740xd
+     status = rectime=1685351943,varattr=,jobs=115848.r740xd 115849.r740xd,state=free,netload=100179510042,gres=,loadave=1.34,ncpus=32,physmem=196679936kb,availmem=254591272kb,totmem=263788796kb,idletime=2185648,nusers=1,nsessions=2,sessions=105266 105759,uname=Linux node22 3.10.0-957.el7.x86_64 #1 SMP Thu Nov 8 23:39:32 UTC 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+
+node23
+     state = free
+     np = 64
+     ntype = cluster
+     jobs = 0/115830.r740xd, 1/115830.r740xd, 2/115830.r740xd, 3/115830.r740xd, 4/115830.r740xd, 5/115830.r740xd, 6/115830.r740xd, 7/115830.r740xd, 8/115831.r740xd, 9/115831.r740xd, 10/115831.r740xd, 11/115831.r740xd, 12/115831.r740xd, 13/115831.r740xd, 14/115831.r740xd, 15/115831.r740xd, 16/115832.r740xd, 17/115833.r740xd, 18/115834.r740xd, 19/115835.r740xd, 20/115836.r740xd, 21/115837.r740xd
+     status = rectime=1685351966,varattr=,jobs=115830.r740xd 115831.r740xd 115832.r740xd 115833.r740xd 115834.r740xd 115835.r740xd 115836.r740xd 115837.r740xd,state=free,netload=869748542764,gres=,loadave=7.42,ncpus=64,physmem=1056288728kb,availmem=1058105932kb,totmem=1089843156kb,idletime=3633467,nusers=1,nsessions=8,sessions=4901 4996 5229 5321 5415 5509 5637 5882,uname=Linux gpu1 3.10.0-957.el7.x86_64 #1 SMP Sat Dec 15 12:48:25 CST 2018 x86_64,opsys=linux
+     mom_service_port = 15002
+     mom_manager_port = 15003
+     gpus = 0
+

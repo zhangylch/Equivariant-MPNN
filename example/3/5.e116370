@@ -1,0 +1,25 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 110, in <module>
+    if np.mod(iepoch,check_epoch)==0: scheduler(loss_val)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 17, in __call__
+    return self.forward(loss)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 30, in forward
+    jit_pes=torch.jit.script(self.ema_model.module)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_script.py", line 1284, in script
+    return torch.jit._recursive.create_script_module(
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_recursive.py", line 479, in create_script_module
+    AttributeTypeIsSupportedChecker().check(nn_module)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_check.py", line 70, in check
+    init_ast = ast.parse(textwrap.dedent(source_lines))
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/ast.py", line 50, in parse
+    return compile(source, filename, mode, flags,
+  File "<unknown>", line 4
+    self.register_buffer("nwave",torch.tensor([nwave].dtype=torch.long))
+                                              ^^^^^^^^^^^^^^
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?

@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 110, in <module>
+    if np.mod(iepoch,check_epoch)==0: scheduler(loss_val)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 17, in __call__
+    return self.forward(loss)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 36, in forward
+    self.jit_lammps(self.ema_model.module)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/lammps_MPNN/model/script.py", line 11, in __call__
+    self.model.load_state_dict(ema_model.state_dict())
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/nn/modules/module.py", line 2041, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for MPNN:
+	Unexpected key(s) in state_dict: "itermod.memssage_0.nets.0.weight", "itermod.memssage_0.nets.0.bias", "itermod.memssage_0.nets.1.alpha", "itermod.memssage_0.nets.1.beta", "itermod.memssage_0.nets.2.weight", "itermod.memssage_0.nets.2.bias", "itermod.memssage_0.nets.3.weight", "itermod.memssage_0.nets.3.bias", "itermod.memssage_0.nets.4.alpha", "itermod.memssage_0.nets.4.beta", "itermod.memssage_0.nets.5.weight", "itermod.memssage_0.nets.5.bias", "itermod.memssage_1.nets.0.weight", "itermod.memssage_1.nets.0.bias", "itermod.memssage_1.nets.1.alpha", "itermod.memssage_1.nets.1.beta", "itermod.memssage_1.nets.2.weight", "itermod.memssage_1.nets.2.bias", "itermod.memssage_1.nets.3.weight", "itermod.memssage_1.nets.3.bias", "itermod.memssage_1.nets.4.alpha", "itermod.memssage_1.nets.4.beta", "itermod.memssage_1.nets.5.weight", "itermod.memssage_1.nets.5.bias". 

@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 6, in <module>
+    from src.params import *
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/params.py", line 103, in <module>
+    atom_species=torch.tensor(np.array(atom_species)).reshape(-1,1).to(torch_dtype).to(device)
+NameError: name 'atom_species' is not defined

@@ -34,7 +34,6 @@ class Dataloader():
         self.center_factor=torch.ones((numpoint,self.maxnumatom),dtype=Dtype)
         if force_table:
             force=torch.zeros((numpoint,self.maxnumatom,3),dtype=Dtype)
-        print(numpoint)
         # The purpose of these codes is to process conformational data consisting of different numbers of atoms into a regular tensor.
         for i in range(numpoint):
             self.species[i,0:self.numatoms[i],:]=torch.tensor(species[i])

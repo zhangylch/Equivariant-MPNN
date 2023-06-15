@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 7, in <module>
+    import model.MPNN as MPNN
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/model/MPNN.py", line 10, in <module>
+    class MPNN(torch.nn.Module):
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/model/MPNN.py", line 11, in MPNN
+    def __init__(self,neigh_atoms,atom_species=atom_species,initpot=0.0,max_l=2,nwave=8,cutoff=4.0,ncontract=64,emb_nblock=1,emb_nl=[1,8,8],emb_layernorm=True,iter_loop=3,iter_nblock=1,iter_nl=[64,64,64],iter_dropout_p=[0.0,0.0],iter_layernorm=True,nblock=1,nl=[64,64,64],dropout_p=[0.0,0.0],layernorm=True,device=torch.device("cpu"),Dtype=torch.float32):
+NameError: name 'atom_species' is not defined

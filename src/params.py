@@ -40,6 +40,8 @@ datafloder="./"
 emb_nblock=1
 emb_nl=[8,8]
 emb_layernorm=True
+
+
 iter_loop = 2
 iter_nblock = 1             # neural network architecture   
 iter_nl = [64,64]
@@ -65,6 +67,12 @@ with open('para/input','r') as f1:
               m=string.split('#')
               exec(m[0])
 
+
+# add the input neuron for each neuron
+emb_nl.insert(0,1)
+iter_nl.insert(0,ncontract)
+nl.insert(0,ncontract)
+
 # torch and numpy dtype
 if dtype=='float64':
     torch_dtype=torch.float64
@@ -72,6 +80,7 @@ if dtype=='float64':
 else:
     torch_dtype=torch.float32
     np_dtype=np.float32
+
 
 torch.set_default_dtype(torch_dtype)
 
@@ -90,3 +99,6 @@ else:
     nprop=1
     init_weight=init_weight[0:1]
     final_weight=final_weight[0:1]
+
+atom_species=torch.tensor(np.array(atom_species)).reshape(-1,1).to(torch_dtype).to(device)
+

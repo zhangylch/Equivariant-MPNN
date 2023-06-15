@@ -1,0 +1,40 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 110, in <module>
+    if np.mod(iepoch,check_epoch)==0: scheduler(loss_val)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 17, in __call__
+    return self.forward(loss)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 30, in forward
+    jit_pes=torch.jit.script(self.ema_model.module)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_script.py", line 1284, in script
+    return torch.jit._recursive.create_script_module(
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_recursive.py", line 480, in create_script_module
+    return create_script_module_impl(nn_module, concrete_type, stubs_fn)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_recursive.py", line 546, in create_script_module_impl
+    create_methods_and_properties_from_stubs(concrete_type, method_stubs, property_stubs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_recursive.py", line 397, in create_methods_and_properties_from_stubs
+    concrete_type._create_methods_and_properties(property_defs, property_rcbs, method_defs, method_rcbs, method_defaults)
+RuntimeError: 
+Arguments for call are not valid.
+The following variants are available:
+  
+  aten::new_zeros(Tensor self, SymInt[] size, *, ScalarType? dtype=None, Layout? layout=None, Device? device=None, bool? pin_memory=None) -> Tensor:
+  Expected a value of type 'int' for argument '<varargs>' but instead found type 'Tuple[int, Tensor, Tensor]'.
+  
+  aten::new_zeros.out(Tensor self, SymInt[] size, *, Tensor(a!) out) -> Tensor(a!):
+  Expected a value of type 'int' for argument '<varargs>' but instead found type 'Tuple[int, Tensor, Tensor]'.
+
+The original call is:
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/model/MPNN.py", line 56
+        sph=self.sph_cal(distvec.T)
+        orbital=torch.einsum("i,ij,ij,ki->ikj",cut_distances,radial_func,neigh_emb[:,:self.nwave[0]],sph)
+        center_orbital=cart.new_zeros((cart.shape[0],self.nangular[0],self.nwave[0]),dtype=cart.dtype,device=cart.device)
+                       ~~~~~~~~~~~~~~ <--- HERE
+        center_orbital=torch.index_add(center_orbital,0,neighlist[0],orbital)
+        contracted_orbital=torch.einsum("ikj,kjm->ikm",center_orbital,contracted_coeff)
+

@@ -60,9 +60,8 @@ class NNMod(torch.nn.Module):
                   xavier_normal_(linear.weight)
                   modules.append(linear)
           modules.append(actfun(nl[nhid-1],nl[nhid]))
-          if layernorm: modules.append(LayerNorm(nl[nhid]))
           linear=Linear(nl[nhid],self.outputneuron)
-          #zeros_(linear.weight)
+          zeros_(linear.weight)
           linear.bias[:]=initbias[:]
           modules.append(linear)
       self.nets = Sequential(*modules)

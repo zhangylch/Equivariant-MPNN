@@ -1,7 +1,7 @@
 #!/bin/sh
 #PBS -V
 #PBS -q a100
-#PBS -N 4
+#PBS -N fireann-1
 #PBS -l nodes=1:ppn=8
 #export CUDA_VISIBLE_DEVICES="4,5"
 source /public/home/group_zyl/.bashrc

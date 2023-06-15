@@ -1,0 +1,31 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 110, in <module>
+    if np.mod(iepoch,check_epoch)==0: scheduler(loss_val)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 17, in __call__
+    return self.forward(loss)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/src/scheduler.py", line 36, in forward
+    self.jit_lammps(self.ema_model.module)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/lammps_MPNN/model/script.py", line 12, in __call__
+    scripted_pes=torch.jit.script(self.model)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_script.py", line 1284, in script
+    return torch.jit._recursive.create_script_module(
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_recursive.py", line 480, in create_script_module
+    return create_script_module_impl(nn_module, concrete_type, stubs_fn)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_recursive.py", line 546, in create_script_module_impl
+    create_methods_and_properties_from_stubs(concrete_type, method_stubs, property_stubs)
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/jit/_recursive.py", line 397, in create_methods_and_properties_from_stubs
+    concrete_type._create_methods_and_properties(property_defs, property_rcbs, method_defs, method_rcbs, method_defaults)
+RuntimeError: 
+undefined value center_factor:
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/lammps_MPNN/model/MPNN.py", line 65
+            # here cente_coeff is for discriminating for the different center atoms.
+        output=self.outnn(density)
+        return torch.einsum("ij,i ->",output,center_factor)
+                                             ~~~~~~~~~~~~~ <--- HERE
+

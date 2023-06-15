@@ -5,7 +5,8 @@ import numpy as np
 from write_format import *
 cell=np.zeros((3,3),dtype=np.float64)
 f2=open("configuration",'w')
-with open("/data/home/scv2201/run/zyl/data/H2O/train/configuration",'r') as f1:
+f3=open("test",'w')
+with open("/public/home/group_zyl/zyl/data/H2O/configuration",'r') as f1:
     while True:
         string=f1.readline()
         if not string: break
@@ -43,5 +44,9 @@ with open("/data/home/scv2201/run/zyl/data/H2O/train/configuration",'r') as f1:
         am=np.array(am)
         mass=np.array(mass)
         abforce=np.array(abforce)
-        write_format(f2,numatom,element,mass,am,cart,abene,force=abforce,cell=cell)
+        if np.random.uniform() < 0.9:
+            write_format(f2,numatom,element,mass,am,cart,abene,force=abforce,cell=cell)
+        else:
+            write_format(f3,numatom,element,mass,am,cart,abene,force=abforce,cell=cell)
 f2.close()
+f3.close()

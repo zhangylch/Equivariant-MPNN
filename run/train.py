@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 # used for DDP
 
-from torch.func import grad_and_value,vmap
+from torch.func import grad_and_value,vmap,jacfwd
 
 from src.params import *
 import model.MPNN as MPNN
@@ -11,8 +11,15 @@ import dataloader.cudaloader as cudaloader
 import src.print_info as print_info
 import src.restart as restart
 import src.scheduler as state_scheduler
+import torch._dynamo
+import logging
 
-torch.autograd.set_detect_anomaly(True)
+if iter_loop<0.5: 
+    import lammps_ANN.model.script as lammps
+else:
+    import lammps_MPNN.model.script as lammps
+    
+#torch._dynamo.config.verbose=True
 dataloader=dataloader.Dataloader(maxneigh,batchsize,ratio=ratio,cutoff=cutoff,dier=cutoff,datafloder=datafloder,force_table=force_table,shuffle=True,device=device,Dtype=torch_dtype)
 
 initpot=dataloader.initpot
@@ -24,7 +31,7 @@ if torch.cuda.is_available():
     dataloader=cudaloader.CudaDataLoader(dataloader,device,queue_size=queue_size)
 
 #==============================Equi MPNN=================================
-model=MPNN.MPNN(initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,ncontract=ncontract,emb_nblock=emb_nblock,emb_nl=emb_nl,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,device=device,Dtype=torch_dtype).to(device).to(torch_dtype)
+model=MPNN.MPNN(maxneigh/maxnumatom,atom_species=atom_species,initpot=initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,ncontract=ncontract,emb_nblock=emb_nblock,emb_nl=emb_nl,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,Dtype=torch_dtype).to(device).to(torch_dtype)
 
 # Exponential Moving Average
 ema_avg = lambda averaged_model_parameter, model_parameter, num_averaged: ema_decay * averaged_model_parameter + (1-ema_decay) * model_parameter
@@ -39,10 +46,16 @@ if table_init==1:
     state_loader(optim,"optim.pt")
     state_loader(ema_model,"ema.pt")
 
+for name, params in model.named_parameters():
+    print(name,params.shape)
+
+#script.jit for lammps
+jit_lammps=lammps.lammps(atom_species=atom_species,initpot=initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,ncontract=ncontract,emb_nblock=emb_nblock,emb_nl=emb_nl,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm)
+
 # learning rate scheduler 
 lr_scheduler=torch.optim.lr_scheduler.ReduceLROnPlateau(optim,factor=decay_factor,patience=patience_epoch,min_lr=end_lr)
 
-scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,optim,model,ema_model,device)
+scheduler=state_scheduler.Scheduler(end_lr,decay_factor,state_loader,optim,model,ema_model,jit_lammps)
 
 if force_table:
     Vmap_model=vmap(grad_and_value(model),in_dims=(0,0,0,0,0,0),out_dims=(0,0))
@@ -51,14 +64,14 @@ if force_table:
         prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
         lossprop=torch.cat([torch.sum(torch.square(ipred-ilabel)).reshape(-1) for ipred, ilabel in zip(prediction,abprop)])
         loss=torch.inner(lossprop,weight)
-        return loss,lossprop
+        return loss,lossprop[:nprop]
 else:
     Vmap_model=vmap(model,in_dims=(0,0,0,0,0,0),out_dims=0)
     # define the loss function
     def loss_func(coor,neighlist,shiftimage,center_factor,neigh_factor,species,abprop,weight):
         prediction=Vmap_model(coor,neighlist,shiftimage,center_factor,neigh_factor,species)
         for label in abprop:
-            lossprop=torch.sum(torch.square(prediction-label))
+            lossprop=torch.sum(torch.square(label-prediction))
         loss=lossprop*weight
         return loss,lossprop
 
@@ -79,8 +92,6 @@ for iepoch in range(Epoch):
     for data in dataloader:
         optim.zero_grad(set_to_none=True)
         loss,loss_prop=loss_func(*data,weight)
-        #for name, params in model.named_parameters():
-        #    print(name,params)
         loss.backward()
         optim.step()   
         loss_prop_train+=loss_prop.detach()
@@ -98,9 +109,10 @@ for iepoch in range(Epoch):
     loss_prop_val=torch.sqrt(loss_prop_val/nval)
     if np.mod(iepoch,check_epoch)==0: scheduler(loss_val)
 
+    print_err(iepoch,lr,loss_prop_train,loss_prop_val)
+
     lr_scheduler.step(loss_val)
 
-    print_err(iepoch,lr,loss_prop_train,loss_prop_val)
     if lr<end_lr:
         break
 print("Normal termination")

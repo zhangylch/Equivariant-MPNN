@@ -1,0 +1,12 @@
+Equivariant MPNN package based on three-body descriptors 
+2023-06-05-21_42_02 
+Epoch=      0,  lr= 1.000000e-03  train: 2.189142e+00 1.669323e+01  validation: 1.595662e+00 3.459735e+01  
+Epoch=      1,  lr= 1.000000e-03  train: 1.034512e+00 1.561657e+01  validation: 6.102951e-01 6.771501e+00  
+Epoch=      2,  lr= 1.000000e-03  train: 5.144276e-01 7.239544e+00  validation: 4.321858e-01 4.120565e+00  
+Epoch=      3,  lr= 1.000000e-03  train: 4.159453e-01 5.805112e+00  validation: 4.141417e-01 3.581111e+00  
+Epoch=      4,  lr= 1.000000e-03  train: 3.886856e-01 6.042692e+00  validation: 3.731539e-01 6.520492e+00  
+Epoch=      5,  lr= 1.000000e-03  train: 3.743477e-01 5.932537e+00  validation: 3.633468e-01 5.049258e+00  
+Epoch=      6,  lr= 1.000000e-03  train: 3.606226e-01 5.582786e+00  validation: 3.346887e-01 3.751020e+00  
+Epoch=      7,  lr= 1.000000e-03  train: 3.382236e-01 7.155375e+00  validation: 3.461412e-01 6.972839e+00  
+Epoch=      8,  lr= 1.000000e-03  train: 3.296424e-01 5.502410e+00  validation: 3.128177e-01 3.279027e+00  
+Epoch=      9,  lr= 1.000000e-03  train: 3.159259e-01 4.638221e+00  validation: 3.187961e-01 3.295417e+00  

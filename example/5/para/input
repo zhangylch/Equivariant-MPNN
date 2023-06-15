@@ -1,41 +1,42 @@
 # open a file for output information in iterations
 fout=open('nn.err','w')
 #======general setup===========================================
-table_init= 0                # 1: a pretrained or restart  
+table_init= 0               # 1: a pretrained or restart  
 force_table= True
 ratio=0.9                      # ratio for vaildation
-queue_size=10
-Epoch=50000                    # total numbers of epochs for fitting 
+queue_size=5
+Epoch=10000                    # total numbers of epochs for fitting 
 dtype='float32'   #float32/float64
 # batchsize: the most import setup for efficiency
-batchsize= 2048   # batchsize for each process
-init_weight=[10, 1]
-final_weight=[0.05, 0.2]
-datafloder="data/"
+batchsize=32  # batchsize for each process
+init_weight=[5, 1]
+final_weight=[0.1, 0.2]
+datafloder="../data/0/"
 check_epoch=5
 
 #========================parameters for optim=======================
-start_lr=0.002                 # initial learning rate
+start_lr=0.001                 # initial learning rate
 end_lr=2e-6                    # final learning rate
 re_coeff=0.0                    # L2 normalization cofficient
 decay_factor=0.5          # Factor by which the learning rate will be reduced. new_lr = lr * factor. 
-patience_epoch=100             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
+patience_epoch=150             # patience epoch  Number of epochs with no improvement after which learning rate will be reduced. 
 
 #=======================parameters for local environment========================
-maxneigh=20
-cutoff = 6.5
+maxneigh=2500
+cutoff = 3.0
 max_l=2
 nwave=8
 ncontract=64
+atom_species=[8,1]
 
 #===============================embedded NN structure==========
 emb_nblock=1
-emb_nl=[24,24]
+emb_nl=[32]
 emb_layernorm=False
 
 #===========params for MPNN ===============================================
-iter_loop = 2
-iter_nblock = 1          # neural network architecture   
+iter_loop = 6
+iter_nblock = 0          # neural network architecture   
 iter_nl = [64,64]
 iter_dropout_p=[0.0,0.0]
 iter_layernorm= True

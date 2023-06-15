@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/__main__.py", line 1, in <module>
+    import run.train
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/run/train.py", line 34, in <module>
+    model=MPNN.MPNN(maxneigh/maxnumatom,initpot=initpot,max_l=max_l,nwave=nwave,cutoff=cutoff,ncontract=ncontract,emb_nblock=emb_nblock,emb_nl=emb_nl,emb_layernorm=emb_layernorm,iter_loop=iter_loop,iter_nblock=iter_nblock,iter_nl=iter_nl,iter_dropout_p=iter_dropout_p,iter_layernorm=iter_layernorm,nblock=nblock,nl=nl,dropout_p=dropout_p,layernorm=layernorm,device=device,Dtype=torch_dtype).to(device).to(torch_dtype)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/model/MPNN.py", line 34, in __init__
+    self.sph_cal=sph_cal.SPH_CAL(max_l)
+  File "/public/home/group_zyl/zyl/program/Equi-MPNN/low_level/sph_cal.py", line 15, in __init__
+    self.register("dim",torch.tensor([min(9,(max_l+1)*(max_l+1))]))
+  File "/public/home/group_zyl/.conda/envs/pt200/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1614, in __getattr__
+    raise AttributeError("'{}' object has no attribute '{}'".format(
+AttributeError: 'SPH_CAL' object has no attribute 'register'
